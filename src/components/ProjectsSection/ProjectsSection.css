@@ -1,0 +1,183 @@
+.projects-section-wrapper {
+  padding: 5rem 0;
+  background-color: #f6f8fb; /* Light grayish-blue for contrast */
+}
+
+.section-title {
+  font-weight: 800;
+  color: #1a1a2e; /* Royal Blue */
+  margin-bottom: 0.5rem;
+  font-size: 2.2rem;
+}
+
+.title-underline {
+  width: 60px;
+  height: 4px;
+  background-color: #c09e6b; /* Gold */
+  border-radius: 2px;
+}
+
+/* We don't need projects-grid anymore as we use swiper */
+
+.projects-swiper {
+  padding-bottom: 50px !important; /* Space for pagination */
+}
+
+/* Custom Swiper navigation arrows implementation for reliable RTL support */
+.swiper-button-next-custom,
+.swiper-button-prev-custom {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  z-index: 10;
+  color: #c09e6b;
+  background-color: #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.swiper-button-next-custom:hover,
+.swiper-button-prev-custom:hover {
+  background-color: #1a1a2e;
+  color: #fff;
+}
+
+.swiper-button-next-custom svg,
+.swiper-button-prev-custom svg {
+  width: 24px;
+  height: 24px;
+}
+
+.swiper-button-prev-custom { /* visual right */
+  right: -5px;
+}
+
+.swiper-button-next-custom { /* visual left */
+  left: -5px;
+}
+
+.swiper-button-next-custom.swiper-button-disabled,
+.swiper-button-prev-custom.swiper-button-disabled {
+  opacity: 0.35;
+  cursor: auto;
+  pointer-events: none;
+}
+
+
+/* Pagination */
+.swiper-pagination-bullet {
+  background-color: #1a1a2e !important;
+  opacity: 0.4 !important;
+  transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #c09e6b !important;
+  opacity: 1 !important;
+  transform: scale(1.3);
+}
+
+
+/* Project Card Styles */
+.project-card {
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+
+
+
+.project-image-box {
+  position: relative;
+  height: 250px; /* Fixed height for image */
+  overflow: hidden;
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.1);
+}
+
+.project-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(26, 26, 46, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+.btn-view-project {
+  color: #fff;
+  background-color: #c09e6b;
+  border: 2px solid #c09e6b;
+  padding: 0.6rem 1.5rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transform: translateY(20px);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-view-project:hover {
+  background-color: transparent;
+  color: #c09e6b;
+}
+
+.project-card:hover .btn-view-project {
+  transform: translateY(0);
+}
+
+.project-space-badge {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #1a1a2e;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.project-progress .progress {
+  border-radius: 5px;
+  background-color: #eee;
+}
+
+.project-progress .progress-bar {
+  border-radius: 5px;
+}
+
+@media(max-width:576px){
+  .projects-section-wrapper{
+    padding: 0rem 0 !important;
+    /* background-color: gold; */
+  }
+  .projects-swiper-wrapper{
+    padding: 0 !important;
+  }
+}
