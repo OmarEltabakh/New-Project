@@ -43,14 +43,14 @@ const Hero = () => {
           style={{ backgroundImage: `url(${slide.image})` }}
         >
           <div className="hero-overlay"></div>
-          <div className="hero-content">
+          <div className="hero-content ">
             <h1 className={`hero-title ${index === currentSlide ? 'animate' : ''}`}>{slide.title}</h1>
             <p className={`hero-subtitle ${index === currentSlide ? 'animate' : ''}`}>{slide.subtitle}</p>
           </div>
         </div>
       ))}
 
-      <div className="hero-indicators">
+      <div className="hero-indicators ">
         {slides.map((_, index) => (
           <button
             key={index}

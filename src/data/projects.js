@@ -51,10 +51,10 @@ export const projects = [
     location: 'المدينة المنورة',
     description: 'مشروع سكني يتكون من 1 مبنى سكنية تضمن 11 شقة سكنية عصرية بتصاميم مميزة.',
     space: 'تصل مساحتها الى 174م',
-    image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80',
+    image: projectSectionImage1,
     images: [
-      'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1600607688969-a5bfcd64bd40?auto=format&fit=crop&q=80'
+      project1Image1,
+      project1Image2,
     ],
     progress: 55,
     buildingsCount: 1,
@@ -66,10 +66,10 @@ export const projects = [
     location: 'المدينة المنورة',
     description: 'فندق سكني قيد الإنشاء يتميز بتصميم فريد لخدمة زوار المدينة المنورة.',
     space: 'مساحات متعددة',
-    image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80',
+    image: projectSectionImage1,
     images: [
-      'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80'
+      project1Image1,
+      project1Image2,
     ],
     progress: 40,
     salesType: 'تحت الإنشاء',
@@ -81,10 +81,10 @@ export const projects = [
     location: 'المدينة المنورة',
     description: 'فلل سكنية فاخرة تحت الإنشاء بتصميم عصري ملائم للأسرة السعودية.',
     space: 'مساحات واسعة',
-    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80',
+    image: projectSectionImage1,
     images: [
-      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1600573472550-8090b5e0745e?auto=format&fit=crop&q=80'
+      project1Image1,
+      project1Image2,
     ],
     progress: 50,
     salesType: 'تحت الإنشاء',

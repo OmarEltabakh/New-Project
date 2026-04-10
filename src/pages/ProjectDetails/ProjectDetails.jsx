@@ -62,34 +62,9 @@ const ProjectDetails = () => {
   return (
     <div className="project-details-page">
       {/* Hero Section */}
-      <div className="project-hero  ">
-        <div className="hero-slider-bg ">
-          {projectImages.length > 1 && (
-            <>
-              <div className="pd-swiper-button-prev-custom">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 5l7 7-7 7"/></svg>
-              </div>
-              <div className="pd-swiper-button-next-custom">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M15 19l-7-7 7-7"/></svg>
-              </div>
-            </>
-          )}
-          <Swiper
-            modules={[Autoplay, Pagination, Navigation]}
-            autoplay={projectImages.length > 1 ? { delay: 5000, disableOnInteraction: false } : false}
-            pagination={projectImages.length > 1 ? { clickable: true } : false}
-            navigation={projectImages.length > 1 ? { nextEl: '.pd-swiper-button-prev-custom', prevEl: '.pd-swiper-button-next-custom' } : false}
-            loop={projectImages.length > 1}
-            allowTouchMove={projectImages.length > 1}
-            className="hero-swiper"
-            dir="rtl"
-          >
-            {projectImages.map((img, index) => (
-              <SwiperSlide  key={index}>
-                <div className="slide-image" style={{ backgroundImage: `url(${img})` }}></div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+      <div className="project-hero">
+        <div className="hero-slider-bg">
+          <div className="slide-image" style={{ backgroundImage: `url(${projectImages[0]})` }}></div>
         </div>
         
         <div className="hero-overlay "></div>
@@ -114,6 +89,55 @@ const ProjectDetails = () => {
         <div className="row g-5">
           {/* Main Info Column */}
           <div className="col-lg-8">
+            
+            {/* Gallery Slider for Current Project */}
+            <div className="content-card mb-5 modern-card p-0 overflow-hidden position-relative">
+              {projectImages.length > 1 && (
+                <>
+                  <div className="gallery-swiper-button-prev">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 5l7 7-7 7"/></svg>
+                  </div>
+                  <div className="gallery-swiper-button-next">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M15 19l-7-7 7-7"/></svg>
+                  </div>
+                </>
+              )}
+              <Swiper
+                modules={[Autoplay, Pagination, Navigation]}
+                spaceBetween={0}
+                slidesPerView={1}
+                pagination={{ clickable: true, dynamicBullets: true }}
+                navigation={{
+                  prevEl: '.gallery-swiper-button-next',
+                  nextEl: '.gallery-swiper-button-prev'
+                }}
+                autoplay={{ delay: 4000, disableOnInteraction: false }}
+                loop={projectImages.length > 1}
+                className="main-gallery-swiper"
+                dir="rtl"
+                style={{ height: '500px' }}
+              >
+                {projectImages.map((img, index) => (
+                  <SwiperSlide key={index}>
+                    <div className="gallery-slide-card h-100 w-100 position-relative">
+                      <div className="gallery-image" style={{ backgroundImage: `url(${img})`, backgroundSize: 'cover', backgroundPosition: 'center', width: '100%', height: '100%' }}></div>
+                      <div className="gallery-overlay">
+                        <div className="overlay-text-content">
+                          <h4 className="gallery-title mb-2">{project.title}</h4>
+                          <p className="gallery-desc mb-0">
+                            <svg className="ms-1" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                            </svg>
+                            {project.location}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </div>
+
             <div className="content-card mb-5 modern-card">
               <h3 className="section-heading mb-4 px-2">نظرة عامة على المشروع</h3>
               <p className="lead-text mt-3 px-2">{project.description}</p>
@@ -151,42 +175,11 @@ const ProjectDetails = () => {
                 </Swiper>
               </div>
             )}
-
-            {project.locationsDistance && project.locationsDistance.length > 0 && (
-              <div className="content-card modern-card">
-                <h3 className="section-heading mb-4 px-2">الموقع وبعده عن المناطق الرئيسية</h3>
-                
-                <Swiper
-                  modules={[Autoplay, Pagination]}
-                  spaceBetween={20}
-                  breakpoints={{
-                    320: { slidesPerView: 1.2 },
-                    576: { slidesPerView: 2.2 },
-                    992: { slidesPerView: 3 },
-                  }}
-                  pagination={{ clickable: true, dynamicBullets: true }}
-                  autoplay={{ delay: 4000, disableOnInteraction: false }}
-                  className="services-swiper pb-5"
-                  dir="rtl"
-                >
-                  {project.locationsDistance.map((loc, index) => (
-                    <SwiperSlide key={index} className="h-auto">
-                      <div className="location-slider-card h-100">
-                        <div className="location-icon-wrapper mb-3">
-                           {getLocationIcon(loc)}
-                        </div>
-                        <h4 className="location-title">{loc}</h4>
-                      </div>
-                    </SwiperSlide>
-                  ))}
-                </Swiper>
-              </div>
-            )}
           </div>
 
           {/* Sidebar */}
           <div className="col-lg-4">
-            <div className="sidebar-card modern-card sticky-sidebar">
+            <div className="sidebar-card modern-card mb-4">
               <h4 className="sidebar-heading mb-4">تفاصيل سريعة</h4>
               
               <div className="detail-item">
@@ -260,6 +253,35 @@ const ProjectDetails = () => {
                 </Link>
               </div>
             </div>
+
+            {/* Locations (moved to sidebar) */}
+            {project.locationsDistance && project.locationsDistance.length > 0 && (
+              <div className="sidebar-card modern-card sticky-sidebar p-0 overflow-hidden">
+                <div className="p-4 pb-2 border-bottom">
+                  <h4 className="sidebar-heading m-0">الموقع وبعده عن المناطق</h4>
+                </div>
+                <Swiper
+                  modules={[Autoplay, Pagination]}
+                  spaceBetween={0}
+                  slidesPerView={1}
+                  pagination={{ clickable: true, dynamicBullets: true }}
+                  autoplay={{ delay: 4000, disableOnInteraction: false }}
+                  className="services-swiper pb-4 h-100"
+                  dir="rtl"
+                >
+                  {project.locationsDistance.map((loc, index) => (
+                    <SwiperSlide key={index} className="h-auto">
+                      <div className="location-slider-card h-100 m-4 mt-3 mb-1 border-0 shadow-none text-center d-flex flex-column justify-content-center align-items-center bg-transparent p-0">
+                        <div className="location-icon-wrapper mb-3" style={{ width: '80px', height: '80px' }}>
+                           {getLocationIcon(loc)}
+                        </div>
+                        <h4 className="location-title" style={{ fontSize: '1.2rem' }}>{loc}</h4>
+                      </div>
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+              </div>
+            )}
           </div>
         </div>
       </div>
