@@ -38,6 +38,7 @@ const Contact = () => {
 
 const handleSubmit = async (e) => {
     e.preventDefault();
+    
     if (!isFormValid()) return;
     
     setLoading(true);
@@ -47,11 +48,12 @@ const handleSubmit = async (e) => {
 
     try {
       const params = new URLSearchParams();
-      params.append('name', formData.name);
-      params.append('phone', formData.phone);
-      params.append('email', formData.email);
-      params.append('subject', formData.subject);
-      params.append('message', formData.message);
+      
+      params.append('name', formData.name.trim());
+      params.append('phone', formData.phone.trim());
+      params.append('email', formData.email.trim());
+      params.append('subject', formData.subject); 
+      params.append('message', formData.message.trim()); 
 
       await fetch(SCRIPT_URL, {
         method: 'POST',
@@ -63,6 +65,7 @@ const handleSubmit = async (e) => {
       });
 
       setStatus('success');
+      
       setFormData({ 
         name: '', 
         phone: '', 
@@ -70,6 +73,7 @@ const handleSubmit = async (e) => {
         subject: 'استفسار عن المشاريع السكنية', 
         message: '' 
       });
+
     } catch (error) {
       console.error("Error sending data:", error);
       setStatus('error');
@@ -77,7 +81,6 @@ const handleSubmit = async (e) => {
 
     setLoading(false);
   };
-
   return (
     <div className="contact-page-wrapper">
       {/* Contact Hero Area */}
