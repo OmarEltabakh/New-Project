@@ -45,6 +45,9 @@ const ProjectDetails = () => {
     if (text.includes('سلامة') || text.includes('دفاع')) return <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>;
     if (text.includes('مواقف')) return <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><path d="M9 16V8h4a2 2 0 0 1 0 4H9"></path></svg>;
     if (text.includes('كود') || text.includes('بناء')) return <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>;
+    if (text.includes('أدوار')) return <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M13 21h8M3 21h8M5 21V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v14M7 9h2M7 13h2M7 17h2M15 9h2M15 13h2M15 17h2"/></svg>;
+    if (text.includes('سلالم') || text.includes('طوارئ')) return <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6L7 17l1 1h4l5-5V6zM4 14l3-3M2 20l3-3"/></svg>;
+    if (text.includes('خزانات') || text.includes('مياه')) return <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5s-3 3.5-3 5.5a7 7 0 0 0 7 7z"/></svg>;
     
     // Default feature icon
     return <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>;
@@ -228,25 +231,10 @@ const ProjectDetails = () => {
                 </>
               )}
 
-              {project.progress !== null && project.progress !== undefined && (
-                <>
-                  <div className="detail-item">
-                    <span className="detail-label">نسبة الإنجاز:</span>
-                    <div className="w-100">
-                      <div className="d-flex justify-content-between mb-2 mt-2">
-                        <strong>{project.progress}%</strong>
-                      </div>
-                      <div className="progress custom-progress" style={{ height: '10px' }}>
-                        <div className="progress-bar custom-progress-bar" role="progressbar" style={{ width: `${project.progress}%` }} aria-valuenow={project.progress} aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                    </div>
-                  </div>
-                  <hr className="custom-hr" />
-                </>
-              )}
+
 
               <div className="contact-box text-center mt-5">
-                <p className="mb-3 font-weight-bold text-dark">هل أنت مهتم بهذا المشروع؟</p>
+                
                 <Link to="/contact" className="btn btn-primary-gold w-100 py-3 d-flex align-items-center justify-content-center gap-2">
                   <span>تواصل معنا الآن</span>
                   <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>

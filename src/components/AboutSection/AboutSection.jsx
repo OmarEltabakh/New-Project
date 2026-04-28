@@ -20,10 +20,7 @@ const AboutSection = () => {
                <span className="stat-number">%100</span>
                <span className="stat-label">جودة وثقة</span>
              </div>
-             <div className="stat-card">
-               <span className="stat-number">مستقبل</span>
-               <span className="stat-label">رؤيتنا</span>
-             </div>
+
           </div>
         </div>
         <div className="about-image-wrapper ">

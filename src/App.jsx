@@ -10,7 +10,7 @@ function App() {
     <div className="d-flex flex-column min-vh-100">
       <ScrollToHashElement />
       <Navbar />
-      <main className="flex-shrink-0 mb-5">
+      <main className="flex-shrink-0">
         <AppRoutes />
       </main>
       <Footer />

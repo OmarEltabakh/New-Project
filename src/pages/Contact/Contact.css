@@ -114,7 +114,7 @@
   flex-shrink: 0;
 }
 
-.info-item:hover .info-icon {
+.info-icon:hover {
   background: #c09e6b;
   color: #fff;
   transform: translateY(-3px);

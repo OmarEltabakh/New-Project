@@ -114,7 +114,7 @@ const handleSubmit = async (e) => {
                 </span>
                 <div className="info-details">
                   <span className="info-label">رقم الهاتف</span>
-                  <strong className="info-value">966500000000+</strong>
+                  <strong className="info-value" dir="ltr">+966 54 223 1128</strong>
                 </div>
               </div>
 
@@ -124,7 +124,7 @@ const handleSubmit = async (e) => {
                 </span>
                 <div className="info-details">
                   <span className="info-label">البريد الإلكتروني</span>
-                  <strong className="info-value">info@wasaelelnmoo.com</strong>
+                  <a href="mailto:info@wasaelelnmoo.com" className="info-value text-white text-decoration-none" style={{textDecoration: 'none'}}>info@wasaelelnmoo.com</a>
                 </div>
               </div>
 

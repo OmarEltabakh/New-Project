@@ -76,18 +76,6 @@ const ProjectsSection = () => {
                   <p className="project-desc mb-4 flex-grow-1" style={{ color: '#555', lineHeight: '1.6', fontSize: '14px' }}>
                     {project.description}
                   </p>
-
-                  {project.progress !== null && (
-                    <div className="project-progress mt-auto">
-                      <div className="d-flex justify-content-between mb-1">
-                        <span style={{ fontSize: '13px', fontWeight: 'bold' }}>نسبة الإنجاز</span>
-                        <strong style={{ color: '#c09e6b', fontSize: '13px' }}>{project.progress}%</strong>
-                      </div>
-                      <div className="progress" style={{ height: '6px' }}>
-                        <div className="progress-bar" role="progressbar" style={{ width: `${project.progress}%`, backgroundColor: '#c09e6b' }} aria-valuenow={project.progress} aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                    </div>
-                  )}
                 </div>
               </div>
             </SwiperSlide>

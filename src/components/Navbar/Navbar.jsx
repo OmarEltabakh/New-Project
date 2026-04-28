@@ -50,7 +50,6 @@ const Navbar = () => {
             <Link to="/#projects" onClick={closeMenu}>المشاريع</Link>
           </li>
           <li><Link to="/#services" onClick={closeMenu}>خدمات الشركة</Link></li>
-          <li><Link to="/#partners" onClick={closeMenu}>شركاء النجاح</Link></li>
           <li><Link to="/contact" onClick={closeMenu}>تواصل معنا</Link></li>
         </ul>
 
