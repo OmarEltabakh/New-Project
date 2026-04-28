@@ -143,7 +143,9 @@ const ProjectDetails = () => {
 
             <div className="content-card mb-5 modern-card">
               <h3 className="section-heading mb-4 px-2">نظرة عامة على المشروع</h3>
-              <p className="lead-text mt-3 px-2">{project.description}</p>
+              <p className="lead-text mt-3 px-2" style={{ whiteSpace: 'pre-line' }}>
+                {project.detailedDescription || project.description}
+              </p>
             </div>
 
             {project.features && project.features.length > 0 && (
