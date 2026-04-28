@@ -25,54 +25,43 @@
   will-change: transform, box-shadow;
   transform: translateZ(0);
   backface-visibility: hidden;
-  transition: transform 0.5s cubic-bezier(0.2, 0, 0.2, 1), box-shadow 0.5s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .premium-service-card:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+  /* Removed lift and scale */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
 .service-bg {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 1.2s cubic-bezier(0.2, 0, 0.2, 1), filter 0.8s ease, opacity 1s ease;
-  will-change: transform, filter, opacity;
-  animation: fadeInImage 1.2s ease-out;
+  transition: opacity 0.2s ease;
 }
 
-@keyframes fadeInImage {
-  from { opacity: 0; transform: scale(1.1); }
-  to { opacity: 1; transform: scale(1); }
-}
+/* Removed fadeInImage animation */
 
 .premium-service-card:hover .service-bg {
-  transform: scale(1.15);
-  filter: brightness(0.7) blur(2px);
+  /* Removed scale and blur */
+  opacity: 0.8;
 }
 
 .service-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(to top, 
-    rgba(15, 23, 42, 0.98) 0%, 
-    rgba(15, 23, 42, 0.8) 30%, 
-    rgba(15, 23, 42, 0.2) 60%, 
+    rgba(15, 23, 42, 0.9) 0%, 
+    rgba(15, 23, 42, 0.4) 50%, 
     transparent 100%);
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; /* Push everything to the bottom */
-  padding: 40px 30px;
-  transition: background 0.5s ease;
-  will-change: background;
+  justify-content: flex-end;
+  padding: 30px;
 }
 
 .premium-service-card:hover .service-overlay {
-  background: linear-gradient(to top, 
-    rgba(15, 23, 42, 1) 0%, 
-    rgba(15, 23, 42, 0.9) 40%, 
-    rgba(15, 23, 42, 0.4) 100%);
+  background: rgba(15, 23, 42, 0.7);
 }
 
 .service-number {
@@ -83,14 +72,11 @@
   font-weight: 900;
   color: transparent;
   -webkit-text-stroke: 1px rgba(192, 158, 107, 0.4);
-  transition: color 0.5s ease, transform 0.5s cubic-bezier(0.2, 0, 0.2, 1), -webkit-text-stroke 0.5s ease;
-  will-change: transform, color;
 }
 
 .premium-service-card:hover .service-number {
   color: rgba(192, 158, 107, 0.15);
   -webkit-text-stroke: 1px #c09e6b;
-  transform: scale(1.1);
 }
 
 .service-content-box {
@@ -105,7 +91,7 @@
   margin: 0;
   position: relative;
   padding-bottom: 15px;
-  transition: transform 0.5s cubic-bezier(0.2, 0, 0.2, 1);
+  transition: transform 0.3s ease;
   will-change: transform;
 }
 
@@ -130,20 +116,13 @@
 
 .service-premium-desc-box {
   opacity: 0;
-  max-height: 0;
-  overflow: hidden;
   visibility: hidden;
-  transition: opacity 0.4s ease, transform 0.5s cubic-bezier(0.2, 0, 0.2, 1), max-height 0.5s ease;
-  transform: translateY(20px);
-  will-change: opacity, transform, max-height;
+  margin-top: 10px;
 }
 
 .premium-service-card:hover .service-premium-desc-box {
   opacity: 1;
-  max-height: 200px;
   visibility: visible;
-  transform: translateY(0);
-  margin-top: 15px;
 }
 
 .service-premium-desc {

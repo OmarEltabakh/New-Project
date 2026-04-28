@@ -2,12 +2,10 @@
 import projectSectionImage1 from "../assets/projectSectionImages/image-1.webp";
 import project1Image1 from "../assets/projectsImages/project1/image-1.webp";
 import project1Image2 from "../assets/projectsImages/project1/image-2.webp";
-import project1Image3 from "../assets/projectsImages/project1/image-3.webp";
 import project1Image4 from "../assets/projectsImages/project1/image-4.webp";
 import project1Image5 from "../assets/projectsImages/project1/image-5.webp";
 import project1Image6 from "../assets/projectsImages/project1/image-6.webp";
 import project1Image7 from "../assets/projectsImages/project1/image-7.webp";
-import project1Image8 from "../assets/projectsImages/project1/image-8.webp";
 import project1Image9 from "../assets/projectsImages/project1/image-9.webp";
 import project1Image10 from "../assets/projectsImages/project1/image-10.webp";
 import project1Image11 from "../assets/projectsImages/project1/image-11.webp";
@@ -34,15 +32,13 @@ export const projects = [
     space: '183م - 286م',
     image: projectSectionImage1,
     images: [
+      project1Image9,
       project1Image1,
       project1Image2,
-      project1Image3,
       project1Image4,
       project1Image5,
       project1Image6,
       project1Image7,
-      project1Image8,
-      project1Image9,
       project1Image10,
       project1Image11,
       project1Image12,
