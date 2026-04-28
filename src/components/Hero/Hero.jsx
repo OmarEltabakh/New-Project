@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Hero.css';
 import image1 from "../../assets/heroImages/image-1.webp"
 import image2 from "../../assets/heroImages/image-2.webp"
-import image3 from "../../assets/heroImages/image-3.webp"
+import image3 from "../../assets/heroImages/image-3_compressed.webp"
 const slides = [
   {
     id: 1,

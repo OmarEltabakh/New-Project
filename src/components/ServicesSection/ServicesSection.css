@@ -19,49 +19,78 @@
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+  background-color: #0f172a; /* Placeholder color */
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); /* Elegant gradient placeholder */
   cursor: pointer;
-  group: true;
+  will-change: transform, box-shadow;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  transition: transform 0.5s cubic-bezier(0.2, 0, 0.2, 1), box-shadow 0.5s ease;
+}
+
+.premium-service-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
 }
 
 .service-bg {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: transform 1.2s cubic-bezier(0.2, 0, 0.2, 1), filter 0.8s ease, opacity 1s ease;
+  will-change: transform, filter, opacity;
+  animation: fadeInImage 1.2s ease-out;
+}
+
+@keyframes fadeInImage {
+  from { opacity: 0; transform: scale(1.1); }
+  to { opacity: 1; transform: scale(1); }
 }
 
 .premium-service-card:hover .service-bg {
-  transform: scale(1.1);
+  transform: scale(1.15);
+  filter: brightness(0.7) blur(2px);
 }
 
 .service-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.6) 40%, rgba(15, 23, 42, 0) 80%);
+  background: linear-gradient(to top, 
+    rgba(15, 23, 42, 0.98) 0%, 
+    rgba(15, 23, 42, 0.8) 30%, 
+    rgba(15, 23, 42, 0.2) 60%, 
+    transparent 100%);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding: 35px 25px;
-  transition: background 0.4s ease;
+  justify-content: flex-end; /* Push everything to the bottom */
+  padding: 40px 30px;
+  transition: background 0.5s ease;
+  will-change: background;
 }
 
 .premium-service-card:hover .service-overlay {
-  background: linear-gradient(to top, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.8) 50%, rgba(15, 23, 42, 0.3) 100%);
+  background: linear-gradient(to top, 
+    rgba(15, 23, 42, 1) 0%, 
+    rgba(15, 23, 42, 0.9) 40%, 
+    rgba(15, 23, 42, 0.4) 100%);
 }
 
 .service-number {
-  align-self: flex-end;
-  font-size: 32px;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  font-size: 40px;
   font-weight: 900;
   color: transparent;
-  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
-  transition: color 0.4s ease, transform 0.4s ease;
+  -webkit-text-stroke: 1px rgba(192, 158, 107, 0.4);
+  transition: color 0.5s ease, transform 0.5s cubic-bezier(0.2, 0, 0.2, 1), -webkit-text-stroke 0.5s ease;
+  will-change: transform, color;
 }
 
 .premium-service-card:hover .service-number {
-  color: rgba(192, 158, 107, 0.2);
+  color: rgba(192, 158, 107, 0.15);
   -webkit-text-stroke: 1px #c09e6b;
-  transform: scale(1.2) translateY(5px);
+  transform: scale(1.1);
 }
 
 .service-content-box {
@@ -75,8 +104,9 @@
   font-weight: 800;
   margin: 0;
   position: relative;
-  padding-bottom: 20px;
-  transition: transform 0.4s ease;
+  padding-bottom: 15px;
+  transition: transform 0.5s cubic-bezier(0.2, 0, 0.2, 1);
+  will-change: transform;
 }
 
 .service-premium-title::after {
@@ -99,16 +129,19 @@
 }
 
 .service-premium-desc-box {
-  max-height: 0;
   opacity: 0;
+  max-height: 0;
   overflow: hidden;
-  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  visibility: hidden;
+  transition: opacity 0.4s ease, transform 0.5s cubic-bezier(0.2, 0, 0.2, 1), max-height 0.5s ease;
   transform: translateY(20px);
+  will-change: opacity, transform, max-height;
 }
 
 .premium-service-card:hover .service-premium-desc-box {
-  max-height: 200px;
   opacity: 1;
+  max-height: 200px;
+  visibility: visible;
   transform: translateY(0);
   margin-top: 15px;
 }
@@ -148,7 +181,7 @@
   .premium-services-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .premium-service-card {
     height: 400px;
   }
