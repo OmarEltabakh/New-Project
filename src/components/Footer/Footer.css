@@ -161,3 +161,8 @@
     gap: 40px;
   }
 }
+
+.phone-number {
+  direction: ltr;
+  unicode-bidi: bidi-override;
+}
