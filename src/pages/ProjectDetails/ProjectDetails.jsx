@@ -213,6 +213,17 @@ const ProjectDetails = () => {
                 </>
               )}
 
+              {project.floorsCount && (
+                <>
+                  <div className="detail-item">
+                    <span className="detail-label">عدد الأدوار:</span>
+                    <span className="detail-value">{project.floorsCount} أدوار</span>
+                  </div>
+                  <hr className="custom-hr" />
+                </>
+              )}
+
+
               {project.apartmentsCount && (
                 <>
                   <div className="detail-item">
@@ -222,7 +233,6 @@ const ProjectDetails = () => {
                   <hr className="custom-hr" />
                 </>
               )}
-
               {project.salesType && (
                 <>
                   <div className="detail-item">
@@ -235,13 +245,7 @@ const ProjectDetails = () => {
 
 
 
-              <div className="contact-box text-center mt-5">
-                
-                <Link to="/contact" className="btn btn-primary-gold w-100 py-3 d-flex align-items-center justify-content-center gap-2">
-                  <span>تواصل معنا الآن</span>
-                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
-                </Link>
-              </div>
+
             </div>
 
             {/* Locations (moved to sidebar) */}
@@ -274,6 +278,19 @@ const ProjectDetails = () => {
             )}
           </div>
         </div>
+      </div>
+
+      {/* Floating Action Button for Location (Project Specific) */}
+      <div className="project-location-floating">
+        <a 
+          href={project.mapUrl || '#'} 
+          target="_blank" 
+          rel="noreferrer" 
+          className="floating-btn location-btn"
+          data-tooltip="الموقع"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </a>
       </div>
     </div>
   );

@@ -600,3 +600,77 @@
     background: linear-gradient(to top, rgba(26, 26, 46, 0.9) 0%, transparent 100%);
   }
 }
+/* Project Location Floating Button */
+.project-location-floating {
+  position: fixed;
+  bottom: 154px;
+  right: 30px;
+  z-index: 1000;
+}
+
+.floating-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  text-decoration: none;
+  position: relative;
+}
+
+.floating-btn svg {
+  width: 22px;
+  height: 22px;
+}
+
+.location-btn {
+  background: #c09e6b;
+}
+
+.floating-btn:hover {
+  transform: scale(1.1) translateY(-3px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* Tooltip */
+.floating-btn::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  right: 70px;
+  background: rgba(26, 26, 46, 0.9);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.floating-btn:hover::before {
+  opacity: 1;
+  visibility: visible;
+  right: 60px;
+}
+
+@media (max-width: 768px) {
+  .project-location-floating {
+    bottom: 134px;
+    right: 20px;
+  }
+  .floating-btn {
+    width: 45px;
+    height: 45px;
+  }
+  .floating-btn::before {
+    display: none;
+  }
+}

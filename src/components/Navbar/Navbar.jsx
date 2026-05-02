@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 import logo from "../../assets/logo/logo.webp";
+import AnnouncementBar from './AnnouncementBar';
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -22,6 +23,8 @@ const Navbar = () => {
   const closeMenu = () => setIsMobileMenuOpen(false);
 
   return (
+    <>
+    <AnnouncementBar />
     <nav className={`navbar-custom ${isScrolled ? 'scrolled' : ''}`}>
       <div className="navbar-container ">
         
@@ -55,6 +58,7 @@ const Navbar = () => {
 
       </div>
     </nav>
+    </>
   );
 };
 

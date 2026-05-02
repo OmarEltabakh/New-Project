@@ -1,0 +1,114 @@
+.announcement-bar-wrapper {
+    background: linear-gradient(90deg, #1a2a3a 0%, #0d1520 100%);
+    color: #c5a059;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+    z-index: 1001;
+}
+
+.announcement-ticker {
+    width: 100%;
+    display: flex;
+}
+
+.ticker-content {
+    display: flex;
+    white-space: nowrap;
+    animation: ticker 30s linear infinite;
+    padding-right: 50px;
+}
+
+.ticker-item {
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.ticker-icon {
+    width: 18px;
+    height: 18px;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #c5a059;
+}
+
+.ticker-text {
+    color: #ffffff;
+    opacity: 0.9;
+}
+
+@keyframes ticker {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(50%);
+    }
+}
+
+/* Adjust for RTL */
+[dir="rtl"] .ticker-content {
+    animation: ticker-rtl 30s linear infinite;
+}
+
+@keyframes ticker-rtl {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(50%);
+    }
+}
+
+/* Since it's RTL by default in this project probably, I'll use a more robust animation */
+.ticker-content {
+    display: flex;
+    animation: scroll 40s linear infinite;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(50%); }
+}
+
+/* Let's refine the animation to be smoother and handles the doubling */
+.ticker-content {
+    display: flex;
+    width: fit-content;
+    animation: scroll-left 30s linear infinite;
+}
+
+@keyframes scroll-left {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(50%);
+    }
+}
+
+@media (max-width: 768px) {
+    .announcement-bar-wrapper {
+        height: 35px;
+    }
+    .ticker-item {
+        padding: 0 20px;
+        font-size: 0.8rem;
+    }
+    .ticker-icon {
+        width: 14px;
+        height: 14px;
+    }
+}
