@@ -15,6 +15,7 @@
 
 .announcement-ticker {
     width: 100%;
+    display: flex;
     overflow: hidden;
 }
 
@@ -22,14 +23,13 @@
     display: flex;
     white-space: nowrap;
     width: max-content;
-    /* Speed adjusted for more items */
-    animation: ticker-scroll 30s linear infinite; 
+    animation: ticker-scroll 25s linear infinite;
 }
 
 .ticker-item {
     display: flex;
     align-items: center;
-    padding: 0 50px; /* Increased padding slightly */
+    padding: 0 40px;
     font-size: 0.9rem;
     font-weight: 500;
     flex-shrink: 0;
@@ -50,19 +50,33 @@
     opacity: 0.9;
 }
 
-/* Since we repeated the items 4 times, 
-   moving by -50% will cycle through 2 sets perfectly.
+/* 
+   20 sets of content in JSX for a perfect seamless loop.
+   Moving by -5% brings the next set exactly to the start.
 */
 @keyframes ticker-scroll {
-    0% {
+    from {
         transform: translateX(0);
     }
-    100% {
-        /* Move to the left by half the width of the entire content */
-        transform: translateX(50%); 
+    to {
+        transform: translateX(-5%);
     }
 }
 
 .announcement-ticker:hover .ticker-content {
     animation-play-state: paused;
+}
+
+@media (max-width: 768px) {
+    .announcement-bar-wrapper {
+        height: 35px;
+    }
+    .ticker-item {
+        padding: 0 20px;
+        font-size: 0.8rem;
+    }
+    .ticker-icon {
+        width: 14px;
+        height: 14px;
+    }
 }

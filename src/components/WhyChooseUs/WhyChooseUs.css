@@ -28,7 +28,8 @@
 .title-divider {
   width: 80px;
   height: 4px;
-  background-color: #0e463c;
+  background-color: #c09e6b;
+  margin: 0 auto;
   border-radius: 2px;
 }
 
@@ -63,18 +64,18 @@
 .reason-icon-wrapper {
   width: 70px;
   height: 70px;
-  background-color: rgba(14, 70, 60, 0.05);
+  background-color: rgba(192, 158, 107, 0.1);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #0e463c;
+  color: #c09e6b;
   margin-bottom: 25px;
   transition: all 0.3s ease;
 }
 
 .reason-card:hover .reason-icon-wrapper {
-  background-color: #0e463c;
+  background-color: #c09e6b;
   color: #fff;
 }
 
@@ -86,7 +87,7 @@
 .reason-card-title {
   font-size: 1.4rem;
   font-weight: 700;
-  color: #0e463c;
+  color: #c09e6b;
   margin-bottom: 15px;
 }
 

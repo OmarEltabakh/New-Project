@@ -124,15 +124,6 @@
   align-items: center !important;
 }
 
-.footer-whatsapp-numbers.centered-numbers {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  justify-content: center;
-}
-
-
-
 .footer-wa-link {
   color: #cbd5e1 !important;
   text-decoration: none !important;
