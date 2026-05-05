@@ -38,11 +38,14 @@ const AnnouncementBar = () => {
     }
   ];
 
+  // Repeat the array more times to ensure no gaps on wide screens
+  const repeatedAnnouncements = [...announcements, ...announcements, ...announcements, ...announcements];
+
   return (
-    <div className="announcement-bar-wrapper">
+    <div className="announcement-bar-wrapper" dir="rtl">
       <div className="announcement-ticker">
         <div className="ticker-content">
-          {[...announcements, ...announcements].map((item, index) => (
+          {repeatedAnnouncements.map((item, index) => (
             <div key={index} className="ticker-item">
               <span className="ticker-icon">{item.icon}</span>
               <span className="ticker-text">{item.text}</span>

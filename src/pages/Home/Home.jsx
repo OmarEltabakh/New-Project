@@ -3,6 +3,7 @@ import Hero from '../../components/Hero/Hero';
 import AboutSection from '../../components/AboutSection/AboutSection';
 import ProjectsSection from '../../components/ProjectsSection/ProjectsSection';
 import ServicesSection from '../../components/ServicesSection/ServicesSection';
+import WhyChooseUs from '../../components/WhyChooseUs/WhyChooseUs';
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
       <AboutSection />
       <ProjectsSection />
       <ServicesSection />
+      <WhyChooseUs />
       {/* Additional sections (Partners) will be added here later */}
     </div>
   );

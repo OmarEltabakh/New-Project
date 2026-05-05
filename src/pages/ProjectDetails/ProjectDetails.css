@@ -11,7 +11,7 @@
   height: 50vh;
   min-height: 400px;
   display: flex;
-  padding: 3rem 0;
+  padding: 120px 0 60px 0;
   overflow: hidden;
 }
 
@@ -51,6 +51,7 @@
   background: #c09e6b;
   opacity: 0.4;
 }
+
 .services-swiper .swiper-pagination-bullet-active {
   background: #c09e6b;
   opacity: 1;
@@ -67,7 +68,7 @@
   pointer-events: auto;
   color: #fff;
   background-color: #c09e6b;
-  width: 56px   ;
+  width: 56px;
   height: 56px;
   border-radius: 50%;
   box-shadow: 0 4px 15px rgba(192, 158, 107, 0.4);
@@ -121,7 +122,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;  
+  justify-content: center;
   pointer-events: none;
 }
 
@@ -226,7 +227,10 @@
 
 .gallery-overlay {
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: linear-gradient(to top, rgba(26, 26, 46, 0.95) 0%, rgba(26, 26, 46, 0.4) 40%, transparent 100%);
   display: flex;
   align-items: flex-end;
@@ -254,7 +258,7 @@
   font-size: 2rem;
   font-weight: 800;
   margin: 0;
-  text-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
   transform: translateY(15px);
   opacity: 0;
   transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1) 0.1s;
@@ -292,7 +296,7 @@
   justify-content: center;
   z-index: 10;
   cursor: pointer;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 }
 
@@ -318,12 +322,13 @@
 }
 
 /* Feature Sliders styling */
-.feature-slider-card, .location-slider-card {
+.feature-slider-card,
+.location-slider-card {
   background: #fff;
   border-radius: 16px;
   padding: 2rem 1.5rem;
   border: 1px solid rgba(192, 158, 107, 0.1);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   display: flex;
   flex-direction: column;
@@ -333,20 +338,26 @@
   overflow: hidden;
 }
 
-.feature-slider-card::before, .location-slider-card::before {
+.feature-slider-card::before,
+.location-slider-card::before {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: linear-gradient(135deg, rgba(192, 158, 107, 0.05), transparent);
   opacity: 0;
   transition: opacity 0.3s ease;
 }
 
-.feature-slider-card:hover::before, .location-slider-card:hover::before {
+.feature-slider-card:hover::before,
+.location-slider-card:hover::before {
   opacity: 1;
 }
 
-.feature-slider-card:hover, .location-slider-card:hover {
+.feature-slider-card:hover,
+.location-slider-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 12px 30px rgba(192, 158, 107, 0.15);
   border-color: rgba(192, 158, 107, 0.4);
@@ -392,7 +403,8 @@
   transform: scale(1.05);
 }
 
-.feature-title, .location-title {
+.feature-title,
+.location-title {
   font-size: 1.1rem;
   font-weight: 700;
   color: #2d3748;
@@ -433,7 +445,7 @@
 }
 
 .custom-hr {
-  border-color: rgba(0,0,0,0.06);
+  border-color: rgba(0, 0, 0, 0.06);
   margin: 1.2rem 0;
 }
 
@@ -446,6 +458,34 @@
 .custom-progress-bar {
   background: linear-gradient(90deg, #c09e6b, #e0c89c);
   border-radius: 10px;
+}
+
+
+.project-details-page .sidebar-contact-btn {
+  background: linear-gradient(135deg, #1a1a2e 0%, #0f172a 100%) !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 12px !important;
+  padding: 1rem 1.5rem !important;
+  font-weight: 700 !important;
+  font-size: 1.1rem !important;
+  box-shadow: 0 4px 15px rgba(26, 26, 46, 0.2) !important;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+  text-decoration: none !important;
+  margin: 20px 0 !important;
+  display: flex !important;
+  width: 100% !important;
+  justify-content: center !important;
+  align-items: center !important;
+  position: relative !important;
+  z-index: 10 !important;
+}
+
+.project-details-page .sidebar-contact-btn:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 8px 25px rgba(192, 158, 107, 0.3) !important;
+  background: linear-gradient(135deg, #c09e6b 0%, #a38250 100%) !important;
+  color: #fff !important;
 }
 
 
@@ -476,7 +516,7 @@
   border-radius: 16px;
   overflow: hidden;
   height: 350px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
   cursor: pointer;
 }
 
@@ -490,7 +530,10 @@
 
 .related-project-overlay {
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: linear-gradient(to top, rgba(26, 26, 46, 0.9) 0%, rgba(26, 26, 46, 0.4) 50%, transparent 100%);
   display: flex;
   flex-direction: column;
@@ -548,6 +591,7 @@
   .project-title-large {
     font-size: 2.5rem;
   }
+
   .pd-swiper-button-next-custom,
   .pd-swiper-button-prev-custom {
     width: 40px !important;
@@ -555,6 +599,7 @@
     border-radius: 50%;
     box-shadow: 0 4px 10px rgba(192, 158, 107, 0.4);
   }
+
   .pd-swiper-button-next-custom svg,
   .pd-swiper-button-prev-custom svg {
     width: 20px;
@@ -572,34 +617,47 @@
   .project-title-large {
     font-size: 2.2rem;
   }
+
   .project-main-content {
     margin-top: -2rem;
   }
+
   .modern-card {
     padding: 1.5rem;
   }
+
   .pd-swiper-button-prev-custom {
     right: 5px;
   }
+
   .pd-swiper-button-next-custom {
     left: 5px;
   }
-  .feature-slider-card, .location-slider-card {
+
+  .feature-slider-card,
+  .location-slider-card {
     padding: 1.5rem 1rem;
   }
-  .icon-wrapper, .location-icon-wrapper {
+
+  .icon-wrapper,
+  .location-icon-wrapper {
     width: 55px;
     height: 55px;
   }
-  .feature-title, .location-title {
+
+  .feature-title,
+  .location-title {
     font-size: 1rem;
   }
+
   .related-project-overlay {
-    opacity: 1; /* Always show overlay on mobile since hover doesn't exist */
+    opacity: 1;
+    /* Always show overlay on mobile since hover doesn't exist */
     transform: translateY(0);
     background: linear-gradient(to top, rgba(26, 26, 46, 0.9) 0%, transparent 100%);
   }
 }
+
 /* Project Location Floating Button */
 .project-location-floating {
   position: fixed;
@@ -666,10 +724,12 @@
     bottom: 134px;
     right: 20px;
   }
+
   .floating-btn {
     width: 45px;
     height: 45px;
   }
+
   .floating-btn::before {
     display: none;
   }

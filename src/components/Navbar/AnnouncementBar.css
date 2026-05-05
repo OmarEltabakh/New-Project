@@ -15,23 +15,24 @@
 
 .announcement-ticker {
     width: 100%;
-    display: flex;
+    overflow: hidden;
 }
 
 .ticker-content {
     display: flex;
     white-space: nowrap;
-    animation: ticker 30s linear infinite;
-    padding-right: 50px;
+    width: max-content;
+    /* Speed adjusted for more items */
+    animation: ticker-scroll 30s linear infinite; 
 }
 
 .ticker-item {
     display: flex;
     align-items: center;
-    padding: 0 40px;
+    padding: 0 50px; /* Increased padding slightly */
     font-size: 0.9rem;
     font-weight: 500;
-    letter-spacing: 0.5px;
+    flex-shrink: 0;
 }
 
 .ticker-icon {
@@ -49,66 +50,19 @@
     opacity: 0.9;
 }
 
-@keyframes ticker {
+/* Since we repeated the items 4 times, 
+   moving by -50% will cycle through 2 sets perfectly.
+*/
+@keyframes ticker-scroll {
     0% {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(50%);
+        /* Move to the left by half the width of the entire content */
+        transform: translateX(50%); 
     }
 }
 
-/* Adjust for RTL */
-[dir="rtl"] .ticker-content {
-    animation: ticker-rtl 30s linear infinite;
-}
-
-@keyframes ticker-rtl {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(50%);
-    }
-}
-
-/* Since it's RTL by default in this project probably, I'll use a more robust animation */
-.ticker-content {
-    display: flex;
-    animation: scroll 40s linear infinite;
-}
-
-@keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(50%); }
-}
-
-/* Let's refine the animation to be smoother and handles the doubling */
-.ticker-content {
-    display: flex;
-    width: fit-content;
-    animation: scroll-left 30s linear infinite;
-}
-
-@keyframes scroll-left {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(50%);
-    }
-}
-
-@media (max-width: 768px) {
-    .announcement-bar-wrapper {
-        height: 35px;
-    }
-    .ticker-item {
-        padding: 0 20px;
-        font-size: 0.8rem;
-    }
-    .ticker-icon {
-        width: 14px;
-        height: 14px;
-    }
+.announcement-ticker:hover .ticker-content {
+    animation-play-state: paused;
 }

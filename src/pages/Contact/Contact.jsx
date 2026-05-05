@@ -115,8 +115,7 @@ const handleSubmit = async (e) => {
                 <div className="info-details centered-details">
                   <div className="whatsapp-numbers-column">
                     <a href="https://wa.me/966542231128" target="_blank" rel="noreferrer" className="whatsapp-number-link">+966 54 223 1128</a>
-                    <a href="https://wa.me/966542231128" target="_blank" rel="noreferrer" className="whatsapp-number-link">+966 54 223 1128</a>
-                    <a href="https://wa.me/966542231128" target="_blank" rel="noreferrer" className="whatsapp-number-link">+966 54 223 1128</a>
+                    <a href="https://wa.me/966546680480" target="_blank" rel="noreferrer" className="whatsapp-number-link">+966 54 668 0480</a>
                   </div>
                 </div>
               </div>

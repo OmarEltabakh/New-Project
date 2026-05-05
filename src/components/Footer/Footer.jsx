@@ -45,8 +45,7 @@ const Footer = () => {
               </div>
               <div className="footer-whatsapp-numbers centered-numbers">
                 <a href="https://wa.me/966542231128" target="_blank" rel="noreferrer" className="footer-wa-link">+966 54 223 1128</a>
-                <a href="https://wa.me/966542231128" target="_blank" rel="noreferrer" className="footer-wa-link">+966 54 223 1128</a>
-                <a href="https://wa.me/966542231128" target="_blank" rel="noreferrer" className="footer-wa-link">+966 54 223 1128</a>
+                <a href="https://wa.me/966546680480" target="_blank" rel="noreferrer" className="footer-wa-link">+966 54 668 0480</a>
               </div>
             </li>
           </ul>
