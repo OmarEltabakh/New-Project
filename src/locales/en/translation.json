@@ -1,0 +1,133 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About Us",
+    "projects": "Projects",
+    "services": "Our Services",
+    "contact": "Contact Us",
+    "company_name": "Wasael Alnomou"
+  },
+  "footer": {
+    "about_desc": "A real estate development company with a futuristic vision contributing significantly to the development of the residential product in Madinah by providing housing services and creating modern and harmonious urban environments, ensuring well-being and stability for all our clients, with a focus on design excellence, construction quality, and timely delivery.",
+    "quick_links": "Quick Links",
+    "contact_us": "Contact Us",
+    "location": "Our Location on Maps - Madinah",
+    "rights_reserved": "Wasael Alnomou Real Estate Development. All Rights Reserved."
+  },
+  "projects": {
+    "title": "Latest Real Estate Projects",
+    "view_details": "Full Details",
+    "location": "Location",
+    "space": "Area",
+    "progress": "Progress",
+    "features": "Main & Technical Features",
+    "distances": "Location & Surrounding Areas",
+    "sales_type": "Sales System",
+    "buildings": "Number of Buildings",
+    "buildings_unit": "Buildings",
+    "apartments": "Number of Apartments",
+    "apartments_unit": "Apartments",
+    "floors": "Number of Floors",
+    "floors_unit": "Floors",
+    "back_to_projects": "Back to Projects",
+    "details": "Project Details",
+    "not_found": "Sorry, this project was not found!",
+    "premium_dev": "Premium Real Estate Development",
+    "overview": "Project Overview",
+    "quick_details": "Quick Details",
+    "space_avail": "Available Areas",
+    "proj_type": "Project Type",
+    "contact_now": "Contact Us Now",
+    "p1_title": "Masaken Taybah 1",
+    "p1_location": "Al-Aziziyah District, Madinah",
+    "p1_desc": "Consists of 4 residential buildings meeting your aspirations for modern living in a fully serviced neighborhood in Madinah, focusing on quality and privacy for every family through unique architectural designs and smart space utilization.",
+    "p2_title": "Al-Fayhaa Endowment Project",
+    "p2_location": "Madinah",
+    "p2_desc": "Wasael Alnomou managed the project within an integrated system covering all stages of real estate development and operation. The journey began with technical supervision to ensure quality execution, alongside efficient financial organization and cost management, then preparing the project for operation by setting up the operational infrastructure and basic services. Based on our expertise in real estate marketing and asset management, the project was prepared for the market and successfully leased, within a studied plan to achieve the maximum possible benefit from the real estate asset.",
+    "p3_title": "Al-Hijrah Residence",
+    "p3_location": "Al-Qaswa District, Madinah",
+    "p3_desc": "Luxury residential apartments elevating the standards of modern living, in a vibrant strategic location in the heart of Madinah. The project offers a perfect blend of spaciousness and luxury, with areas starting from 161 square meters up to 190 square meters, within modern architectural designs that give each unit a unique character reflecting the quality of life and sophistication."
+  },
+  "hero": {
+    "s1_title": "Making a difference in every detail",
+    "s1_subtitle": "An innovative work environment that inspires success",
+    "s2_title": "Future Vision",
+    "s2_subtitle": "Continuous development towards the best",
+    "s3_title": "International Standards",
+    "s3_subtitle": "Quality at the core of everything we offer"
+  },
+  "about": {
+    "title": "About Wasael Alnomou",
+    "intro": "We are a real estate entity providing an integrated model in real estate development and project management. We work on transforming ideas into existing projects, then into investment assets ready for operation. We don't just focus on construction, but on managing the entire journey.",
+    "vision_title": "Our Vision",
+    "vision_text": "We strive to be among the leading entities in providing integrated real estate solutions in the Kingdom, by developing projects that keep pace with market aspirations, and providing a modern model that combines quality, efficiency, and sustainability.",
+    "mission_title": "Our Mission",
+    "mission_text": "Developing promising real estate opportunities and transforming them into qualitative projects with high standards, meeting market needs and contributing to community development, with a modern vision and a distinctive footprint.",
+    "goals_title": "Our Goals",
+    "goals_text": "Efficient project management ensuring commitment to time and cost, and providing effective marketing solutions that achieve the best return on investment."
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "An integrated system of real estate solutions for an exceptional experience",
+    "s1_title": "Real Estate Development",
+    "s1_desc": "Building and developing residential and commercial complexes with modern innovative concepts that achieve the highest standards of quality and sustainability, to create exceptional landmarks.",
+    "s2_title": "Real Estate Marketing",
+    "s2_desc": "We put your property in the spotlight through integrated marketing plans that ensure it reaches the target audience and maximizes your returns in the fastest time.",
+    "s3_title": "Project Management",
+    "s3_desc": "A professional approach and precise engineering supervision to ensure the implementation of the smallest details in your project according to the budget and schedule.",
+    "s4_title": "Property Management",
+    "s4_desc": "Your peace of mind is our goal; we manage your property with high professionalism while ensuring the maintenance of property value and regular maintenance."
+  },
+  "why_choose_us": {
+    "title": "Why Choose Wasael Alnomou Real Estate Company?",
+    "r1_title": "Experience & Accreditation",
+    "r1_desc": "Wasael Alnomou has sufficient experience in property and real estate asset management.",
+    "r2_title": "Professional Team",
+    "r2_desc": "We have a professional team specialized in property and asset management.",
+    "r3_title": "Comprehensive Customization",
+    "r3_desc": "We provide a customized solution tailored to your specific needs and goals.",
+    "r4_title": "Increased Returns",
+    "r4_desc": "Increasing returns for the property through improved unit leasing and regular maintenance services."
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "We at Wasael Alnomou are always happy to receive your inquiries and requests",
+    "info_title": "Contact Information",
+    "info_desc": "Sales and technical support team is available to answer any inquiry regarding our real estate projects and services.",
+    "hq": "Headquarters",
+    "location": "Saudi Arabia, Madinah",
+    "send_message": "Send Us a Message",
+    "form_desc": "Fill out the form and we will contact you as soon as possible to provide you with all available details.",
+    "success": "Thank you for contacting us! Your message has been received and we will respond to you soon.",
+    "error": "Sorry, an error occurred while sending the message. Please try again.",
+    "full_name": "Full Name",
+    "phone": "Phone Number",
+    "phone_invalid": "(Invalid Saudi number)",
+    "subject": "Message Subject",
+    "message": "Direct Message",
+    "placeholder_name": "John Doe...",
+    "placeholder_message": "How can we help you?",
+    "sending": "Sending...",
+    "submit": "Send Request Now",
+    "subjects": {
+      "inquiry": "Residential Projects Inquiry",
+      "mgmt": "Property Management Request",
+      "dev": "Real Estate Development Services",
+      "other": "Other"
+    }
+  },
+  "announcements": {
+    "owners_assoc": "Owners Association",
+    "fast_transfer": "Fast Transfer",
+    "selected_projs": "Selected Projects",
+    "guarantees": "Certified Guarantees"
+  },
+  "seo": {
+    "home_title": "Wasael Alnomou Real Estate | Development & Property Management in Madinah",
+    "home_desc": "Wasael Alnomou Real Estate Company in Madinah, distinguished experience in real estate development, marketing, and property and asset management with the highest quality standards.",
+    "projects_title": "Our Real Estate Projects | Wasael Alnomou",
+    "projects_desc": "Browse the latest residential and commercial projects by Wasael Alnomou Real Estate Company in Madinah and various regions of the Kingdom.",
+    "contact_title": "Contact Us | Wasael Alnomou Real Estate",
+    "contact_desc": "Contact us today to inquire about our projects or request property management and real estate development services."
+  }
+}

@@ -35,6 +35,7 @@ export const projects = [
     location: 'حي العزيزية، المدينة المنورة',
     detailedDescription: 'يتكون من 4 مباني سكنية تلبي تطلعاتك للسكن العصري في حي مكتمل الخدمات بمنطقة المدينة المنورة، مع التركيز على الجودة والخصوصية لكل عائلة من خلال تصاميم معمارية فريدة واستغلال ذكي للمساحات.',
     space: '183م - 286م',
+    space_en: '183m² - 286m²',
     mapUrl: 'https://maps.google.com/?q=24.4672,39.6111',
     image: projectSectionImage1,
     images: [
@@ -54,6 +55,7 @@ export const projects = [
     buildingsCount: 4,
     apartmentsCount: 28,
     salesType: 'البيع على الخارطة',
+    salesType_en: 'Off-plan sales',
     features: [
       'أسطح خاصة بجلسات مظللة',
       'تصميم عصري مميز للشقق',
@@ -72,6 +74,24 @@ export const projects = [
       'مواقف خاصة لكل شقة',
       'البناء على الكود السعودي'
     ],
+    features_en: [
+      'Private roofs with shaded seating',
+      'Distinctive modern design for apartments',
+      'Smart entry',
+      'Insurance policy against hidden defects',
+      'Thermal and acoustic insulation for walls',
+      'High-quality elevators',
+      'Large windows',
+      'Laundry area',
+      'Space utilization',
+      'Planters',
+      'Strategic location',
+      'Modern corridors',
+      'Distinctive master suite for each apartment',
+      'Safety and civil defense systems',
+      'Private parking for each apartment',
+      'Built according to the Saudi Building Code'
+    ],
     locationsDistance: [
       'يبعد عن المسجد النبوي 14 دقيقة',
       'يبعد عن مسجد قباء 12 دقيقة',
@@ -79,6 +99,14 @@ export const projects = [
       'يبعد عن جامعة طيبة 9 دقائق',
       'يبعد عن الدائري الثاني 10 دقائق',
       'يبعد عن مركز الخدمات الحكومية الشاملة 4 دقائق'
+    ],
+    locationsDistance_en: [
+      '14 minutes from the Prophet\'s Mosque',
+      '12 minutes from Quba Mosque',
+      '8 minutes from the Islamic University',
+      '9 minutes from Taibah University',
+      '10 minutes from the Second Ring Road',
+      '4 minutes from the Comprehensive Government Services Center'
     ]
   },
   {
@@ -90,6 +118,7 @@ export const projects = [
 وانطلاقًا من خبرتنا في التسويق العقاري وإدارة الأصول، تم إعداد المشروع للسوق وتأجيره بنجاح، ضمن خطة مدروسة تحقق أعلى استفادة ممكنة من الأصل العقاري.
 نحن في وسائل النمو لا نقتصر على إدارة المشاريع فقط، بل نقدم نموذجًا متكاملًا يشمل التطوير، التسويق، إدارة المشاريع، وإدارة الأملاك، لضمان انتقال المشروع بسلاسة من مرحلة التنفيذ إلى أصل استثماري فعّال.`,
     space: '1050 م²',
+    space_en: '1050 m²',
     mapUrl: 'https://maps.google.com/?q=24.4672,39.6111',
     image: projectSectionImage2,
     images: [
@@ -106,6 +135,12 @@ export const projects = [
       'سلالم طوارئ',
       'خزانات مياه رئيسية',
       'أنظمة سلامة متكاملة بالكامل متوافق مع متطلبات الدفاع المدني'
+    ],
+    features_en: [
+      '4 Floors',
+      'Emergency stairs',
+      'Main water tanks',
+      'Fully integrated safety systems compliant with civil defense requirements'
     ]
   },
   {
@@ -120,6 +155,7 @@ export const projects = [
     `,
 
     space: '161م - 190م',
+    space_en: '161m² - 190m²',
     mapUrl: 'https://maps.google.com/?q=24.4444,39.6333',
     image: projectSectionImage3,
     images: [
@@ -132,6 +168,7 @@ export const projects = [
     ],
     progress: null,
     salesType: 'شقق سكنية',
+    salesType_en: 'Residential apartments',
     features: [
       'البناء على الكود السعودي',
       'أسقف عالية',
@@ -146,6 +183,20 @@ export const projects = [
       'أنظمة سلامة والدفاع المدني',
       'مصاعد شركة فوجي'
     ],
+    features_en: [
+      'Built according to the Saudi Building Code',
+      'High ceilings',
+      'Insurance policy against hidden defects',
+      'Smart entry',
+      'Strategic location',
+      'Hotel-style lobby with modern corridors',
+      'Private car parking for each apartment',
+      'Thermal and acoustic insulation',
+      'Space utilization',
+      'Distinctive master suite for each apartment',
+      'Safety and civil defense systems',
+      'Fuji elevators'
+    ],
     locationsDistance: [
       'يبعد عن الحرم النبوي الشريف 9km',
       'يبعد عن مسجد قباء 5km',
@@ -153,6 +204,14 @@ export const projects = [
       'يبعد عن الدائري الثاني 2km',
       'يبعد عن العالية مول 5km',
       'يبعد عن الحديقة المركزية 2km'
+    ],
+    locationsDistance_en: [
+      '9km from the Prophet\'s Mosque',
+      '5km from Quba Mosque',
+      '350m from Al-Hijrah Walkway',
+      '2km from the Second Ring Road',
+      '5km from Al-Alia Mall',
+      '2km from the Central Park'
     ]
   }
 ];

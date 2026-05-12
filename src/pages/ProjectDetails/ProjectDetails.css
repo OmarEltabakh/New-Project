@@ -95,12 +95,12 @@
 
 .pd-swiper-button-prev-custom {
   /* visual right */
-  right: 20px;
+  inset-inline-end: 20px;
 }
 
 .pd-swiper-button-next-custom {
   /* visual left */
-  left: 20px;
+  inset-inline-start: 20px;
 }
 
 
@@ -197,7 +197,7 @@
   content: '';
   position: absolute;
   bottom: 0;
-  right: 0;
+  inset-inline-start: 0;
   width: 60px;
   height: 4px;
   background: linear-gradient(90deg, #c09e6b, #e0c89c);
@@ -308,11 +308,11 @@
 }
 
 .gallery-swiper-button-prev {
-  right: 20px;
+  inset-inline-end: 20px;
 }
 
 .gallery-swiper-button-next {
-  left: 20px;
+  inset-inline-start: 20px;
 }
 
 .gallery-swiper-button-next svg,
@@ -627,11 +627,11 @@
   }
 
   .pd-swiper-button-prev-custom {
-    right: 5px;
+    inset-inline-end: 5px;
   }
 
   .pd-swiper-button-next-custom {
-    left: 5px;
+    inset-inline-start: 5px;
   }
 
   .feature-slider-card,

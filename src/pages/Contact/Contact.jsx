@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import './Contact.css';
 import contactBg from '../../assets/contact-bg.png';
+import SEO from '../../components/SEO/SEO';
 
 const Contact = () => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
     email: '',
-    subject: 'استفسار عن المشاريع السكنية',
+    subject: t('contact.subjects.inquiry'),
     message: ''
   });
 
@@ -70,7 +73,7 @@ const handleSubmit = async (e) => {
         name: '', 
         phone: '', 
         email: '', 
-        subject: 'استفسار عن المشاريع السكنية', 
+        subject: t('contact.subjects.inquiry'), 
         message: '' 
       });
 
@@ -81,8 +84,13 @@ const handleSubmit = async (e) => {
 
     setLoading(false);
   };
+
   return (
     <div className="contact-page-wrapper">
+      <SEO 
+        title={t('seo.contact_title')}
+        description={t('seo.contact_desc')}
+      />
       {/* Contact Hero Area */}
       <div 
         className="contact-hero" 
@@ -94,8 +102,8 @@ const handleSubmit = async (e) => {
       >
         <div style={{position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(15, 23, 42, 0.85)'}}></div>
         <div className="container text-center text-white" style={{position: 'relative', zIndex: 1}}>
-          <h1 className="contact-title-main">تواصل معنا</h1>
-          <p className="contact-subtitle mt-3">نحن في وسائل النمو نسعد دائماً باستقبال استفساراتك وطلباتك</p>
+          <h1 className="contact-title-main">{t('contact.title')}</h1>
+          <p className="contact-subtitle mt-3">{t('contact.subtitle')}</p>
         </div>
       </div>
 
@@ -104,8 +112,8 @@ const handleSubmit = async (e) => {
           
           {/* Contact Details (Dark side) */}
           <div className="contact-info-panel">
-            <h3 className="info-title">معلومات الاتصال</h3>
-            <p className="info-desc">فريق المبيعات والدعم الفني متاح للرد على أي استفسار يخص مشاريعنا العقارية وخدماتنا.</p>
+            <h3 className="info-title">{t('contact.info_title')}</h3>
+            <p className="info-desc">{t('contact.info_desc')}</p>
             
             <div className="contact-info-list">
               <div className="info-item">
@@ -125,8 +133,8 @@ const handleSubmit = async (e) => {
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
                 </span>
                 <div className="info-details">
-                  <span className="info-label">المقر الرئيسي</span>
-                  <strong className="info-value">المملكة العربية السعودية، المدينة المنورة</strong>
+                  <span className="info-label">{t('contact.hq')}</span>
+                  <strong className="info-value">{t('contact.location')}</strong>
                 </div>
               </div>
             </div>
@@ -136,47 +144,47 @@ const handleSubmit = async (e) => {
 
           {/* Contact Form (Light side) */}
           <div className="contact-form-panel">
-            <h3 className="form-header">أرسل لنا رسالة</h3>
-            <p className="text-muted mb-4">قم بتعبئة النموذج وسنتواصل معك في أقرب وقت لإطلاعك على كافة التفاصيل المتاحة.</p>
+            <h3 className="form-header">{t('contact.send_message')}</h3>
+            <p className="text-muted mb-4">{t('contact.form_desc')}</p>
             
             {status === 'success' && (
               <div className="alert alert-success mb-4" role="alert" style={{backgroundColor: '#e6f4ea', color: '#137333', padding: '15px', borderRadius: '8px', border: '1px solid #ceead6'}}>
-                شكراً لتواصلك معنا! تم استلام رسالتك وسنقوم بالرد عليك في أقرب وقت.
+                {t('contact.success')}
               </div>
             )}
 
             {status === 'error' && (
               <div className="alert alert-danger mb-4" role="alert" style={{backgroundColor: '#fce8e6', color: '#c5221f', padding: '15px', borderRadius: '8px', border: '1px solid #fad2cf'}}>
-                عذراً، حدث خطأ أثناء إرسال الرسالة. يرجى المحاولة مرة أخرى.
+                {t('contact.error')}
               </div>
             )}
 
             <form className="contact-form" onSubmit={handleSubmit}>
               <div className="form-group mb-4">
-                <label className="custom-label">الاسم الكامل <span className="text-danger">*</span></label>
-                <input required name="name" value={formData.name} onChange={handleChange} type="text" className="custom-input" placeholder="محمد عبدلله..." />
+                <label className="custom-label">{t('contact.full_name')} <span className="text-danger">*</span></label>
+                <input required name="name" value={formData.name} onChange={handleChange} type="text" className="custom-input" placeholder={t('contact.placeholder_name')} />
               </div>
               
               <div className="form-group mb-4">
-                <label className="custom-label">رقم الجوال <span className="text-danger">*</span> {formData.phone && !isPhoneValid(formData.phone) && <span style={{color: 'red', fontSize: '12px', fontWeight: 'normal'}}>(رقم سعودي غير صحيح)</span>}</label>
+                <label className="custom-label">{t('contact.phone')} <span className="text-danger">*</span> {formData.phone && !isPhoneValid(formData.phone) && <span style={{color: 'red', fontSize: '12px', fontWeight: 'normal'}}>{t('contact.phone_invalid')}</span>}</label>
                 <input required name="phone" value={formData.phone} onChange={handleChange} type="tel" className="custom-input" placeholder="05xxxxxxxx" dir="ltr" style={{ textAlign: 'right', borderColor: formData.phone && !isPhoneValid(formData.phone) ? 'red' : '' }} />
               </div>
 
 
 
               <div className="form-group mb-4">
-                <label className="custom-label">موضوع الرسالة <span className="text-danger">*</span></label>
+                <label className="custom-label">{t('contact.subject')} <span className="text-danger">*</span></label>
                 <select required name="subject" value={formData.subject} onChange={handleChange} className="custom-input custom-select">
-                  <option>استفسار عن المشاريع السكنية</option>
-                  <option>طلب إدارة أملاك</option>
-                  <option>خدمات التطوير العقاري</option>
-                  <option>أخرى</option>
+                  <option>{t('contact.subjects.inquiry')}</option>
+                  <option>{t('contact.subjects.mgmt')}</option>
+                  <option>{t('contact.subjects.dev')}</option>
+                  <option>{t('contact.subjects.other')}</option>
                 </select>
               </div>
               
               <div className="form-group mb-4">
-                <label className="custom-label">رسالتك المباشرة <span className="text-danger">*</span></label>
-                <textarea required name="message" value={formData.message} onChange={handleChange} className="custom-textarea" rows="4" placeholder="كيف يمكننا مساعدتك؟"></textarea>
+                <label className="custom-label">{t('contact.message')} <span className="text-danger">*</span></label>
+                <textarea required name="message" value={formData.message} onChange={handleChange} className="custom-textarea" rows="4" placeholder={t('contact.placeholder_message')}></textarea>
               </div>
 
               <button 
@@ -185,7 +193,7 @@ const handleSubmit = async (e) => {
                 disabled={!isFormValid() || loading}
                 style={{ opacity: (!isFormValid() || loading) ? 0.6 : 1, cursor: (!isFormValid() || loading) ? 'not-allowed' : 'pointer'}}
               >
-                {loading ? 'جاري الإرسال...' : 'إرسال الطلب الآن'}
+                {loading ? t('contact.sending') : t('contact.submit')}
                 {!loading && <svg className="ms-2" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>}
               </button>
             </form>
@@ -194,7 +202,7 @@ const handleSubmit = async (e) => {
         </div>
       </div>
     </div>
-  );
+);
 };
 
 export default Contact;

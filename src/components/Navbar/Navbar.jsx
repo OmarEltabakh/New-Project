@@ -1,63 +1,85 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import './Navbar.css';
 import logo from "../../assets/logo/logo.webp";
 import AnnouncementBar from './AnnouncementBar';
-const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+const Navbar = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { t, i18n } = useTranslation();
+
+  const isRTL = i18n.language === 'ar';
+
+  // Lock scroll when menu is open to prevent the background from moving
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    document.body.style.overflow = isMobileMenuOpen ? 'hidden' : 'unset';
+  }, [isMobileMenuOpen]);
 
   const toggleMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
   const closeMenu = () => setIsMobileMenuOpen(false);
 
+  const toggleLanguage = () => {
+    const newLang = i18n.language === 'ar' ? 'en' : 'ar';
+    i18n.changeLanguage(newLang);
+    document.documentElement.dir = newLang === 'ar' ? 'rtl' : 'ltr';
+  };
+
   return (
     <>
-    <AnnouncementBar />
-    <nav className={`navbar-custom ${isScrolled ? 'scrolled' : ''}`}>
-      <div className="navbar-container ">
-        
-        {/* Logo - First in DOM goes to Right in RTL layout */}
-        <div className="navbar-right">
-          <Link to="/" className="logo">
-            <img src={logo} alt="logo" className="logo-img" />
-            <span className="logo-text">وسائل النمو</span>
-          </Link>
-        </div>
-
-        {/* Mobile Toggle Button */}
-        <div className="mobile-menu-toggle d-lg-none" onClick={toggleMenu} style={{ order: 3 }}>
-          <div className={`hamburger ${isMobileMenuOpen ? 'active' : ''}`}>
-            <span></span>
-            <span></span>
-            <span></span>
+      <AnnouncementBar />
+      <nav 
+        className="navbar-custom" 
+        dir={isRTL ? 'rtl' : 'ltr'}
+      >
+        <div className="navbar-container">
+          
+          {/* Logo Section */}
+          <div className="navbar-brand">
+            <Link to="/" className="logo" onClick={closeMenu}>
+              <img src={logo} alt="logo" className="logo-img" />
+              <span className="logo-text">{t('navbar.company_name')}</span>
+            </Link>
           </div>
+
+          {/* Navigation Links - Desktop and Mobile Wrapper */}
+          <div className={`navbar-menu-container ${isMobileMenuOpen ? 'active' : ''}`}>
+            {/* Transparent Overlay to close menu */}
+            <div className="menu-overlay" onClick={closeMenu}></div>
+            
+            <ul className="navbar-links">
+              <div className="mobile-menu-header d-lg-none">
+                <span className="lang-switch-mobile" onClick={toggleLanguage}>
+                  {i18n.language === 'ar' ? 'English' : 'عربي'}
+                </span>
+                <div className="close-icon" onClick={closeMenu}>✕</div>
+              </div>
+
+              <li><Link to="/#" onClick={closeMenu}>{t('navbar.home')}</Link></li>
+              <li><Link to="/#about" onClick={closeMenu}>{t('navbar.about')}</Link></li>
+              <li><Link to="/#projects" onClick={closeMenu}>{t('navbar.projects')}</Link></li>
+              <li><Link to="/#services" onClick={closeMenu}>{t('navbar.services')}</Link></li>
+              <li><Link to="/contact" onClick={closeMenu}>{t('navbar.contact')}</Link></li>
+            </ul>
+          </div>
+
+          {/* Action */}
+          <div className="navbar-actions">
+            <span className="lang-switch d-none d-lg-block" onClick={toggleLanguage}>
+              {i18n.language === 'ar' ? 'English' : 'عربي'}
+            </span>
+
+            <div className="mobile-toggle d-lg-none" onClick={toggleMenu}>
+              <div className={`hamburger ${isMobileMenuOpen ? 'active' : ''}`}>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+          </div>
+
         </div>
-
-        {/* Center Menu - Second in DOM goes to Left in RTL layout */}
-        <ul className={`navbar-menu ${isMobileMenuOpen ? 'active' : ''}`}>
-          <li><Link to="/#" onClick={closeMenu}>الرئيسية</Link></li>
-          <li><Link to="/#about" onClick={closeMenu}>من نحن</Link></li>
-          <li>
-            <Link to="/#projects" onClick={closeMenu}>المشاريع</Link>
-          </li>
-          <li><Link to="/#services" onClick={closeMenu}>خدمات الشركة</Link></li>
-          <li><Link to="/contact" onClick={closeMenu}>تواصل معنا</Link></li>
-        </ul>
-
-      </div>
-    </nav>
+      </nav>
     </>
   );
 };

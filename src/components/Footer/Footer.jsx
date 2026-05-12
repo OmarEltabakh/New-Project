@@ -1,39 +1,42 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import './Footer.css';
 
 const Footer = () => {
+  const { t } = useTranslation();
+
   return (
     <footer className="footer-custom">
       <div className="container footer-container">
 
         {/* About Section */}
         <div className="footer-section about-section">
-          <h2 className="footer-logo">وسائل النمو</h2>
+          <h2 className="footer-logo">{t('navbar.company_name')}</h2>
           <p className="footer-desc">
-            شركة عقارية تعمل في مجال التطوير العقاري بمفهوم مستقبلي يساهم في تطوير المنتج السكني في المدينة المنورة بشكل كبير من خلال تقديم خدمات سكنية والمساهمة في بناء بيئات حضارية حديثة ومتناغمة، بشكل يحقق الرفاه والاستقرار لكل عملائنا، مع التركيز على التميز في التصميم وجودة البناء والتسليم في الوقت المناسب.
+            {t('footer.about_desc')}
           </p>
         </div>
 
         {/* Quick Links */}
         <div className="footer-section links-section">
-          <h3 className="footer-heading">روابط سريعة</h3>
+          <h3 className="footer-heading">{t('footer.quick_links')}</h3>
           <ul className="footer-links">
-            <li><Link to="/">الرئيسية</Link></li>
-            <li><Link to="/#about">من نحن</Link></li>
-            <li><Link to="/#projects">المشاريع</Link></li>
-            <li><Link to="/#services">خدمات الشركة</Link></li>
-            <li><Link to="/contact">تواصل معنا</Link></li>
+            <li><Link to="/">{t('navbar.home')}</Link></li>
+            <li><Link to="/#about">{t('navbar.about')}</Link></li>
+            <li><Link to="/#projects">{t('navbar.projects')}</Link></li>
+            <li><Link to="/#services">{t('navbar.services')}</Link></li>
+            <li><Link to="/contact">{t('navbar.contact')}</Link></li>
           </ul>
         </div>
 
         {/* Contact info & Social */}
         <div className="footer-section contact-section">
-          <h3 className="footer-heading">تواصل معنا</h3>
+          <h3 className="footer-heading">{t('footer.contact_us')}</h3>
           <ul className="footer-contact-info">
             <li>
               <svg className="footer-icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" /></svg>
-              <a href="https://maps.app.goo.gl/7ASUxzsv5JvMammM7?g_st=iw" target="_blank" rel="noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>موقعنا على الخارطة - المدينة المنورة</a>
+              <a href="https://maps.app.goo.gl/7ASUxzsv5JvMammM7?g_st=iw" target="_blank" rel="noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>{t('footer.location')}</a>
             </li>
             <li>
               <svg className="footer-icon" viewBox="0 0 24 24"><path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.89l5.624-6.812zm9.201-1.451l4.623-3.747v9.467l-4.623-5.72z" /></svg>
@@ -68,7 +71,7 @@ const Footer = () => {
 
       <div className="footer-bottom">
         <div className="container">
-          <p>&copy; {new Date().getFullYear()} وسائل النمو للتطوير العقاري. جميع الحقوق محفوظة.</p>
+          <p>&copy; {new Date().getFullYear()} {t('footer.rights_reserved')}</p>
         </div>
       </div>
     </footer>

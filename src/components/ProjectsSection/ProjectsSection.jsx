@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import { projects } from '../../data/projects';
@@ -9,11 +10,12 @@ import 'swiper/css/pagination';
 import './ProjectsSection.css';
 
 const ProjectsSection = () => {
+  const { t, i18n } = useTranslation();
   return (
     <section id="projects" className="projects-section-wrapper  ">
       <div className="container-fluid px-4 px-lg-5 ">
         <div className="section-header text-center mb-5">
-          <h2 className="section-title">أحدث المشاريع العقارية</h2>
+          <h2 className="section-title">{t('projects.title')}</h2>
           <div className="title-underline mx-auto"></div>
         </div>
 
@@ -50,31 +52,32 @@ const ProjectsSection = () => {
             }
           }}
           className="projects-swiper pb-5"
-          dir="rtl"
+          dir={i18n.language === 'ar' ? 'rtl' : 'ltr'}
+          key={i18n.language}
         >
           {projects.map(project => (
             <SwiperSlide key={project.id} style={{ height: 'auto', display: 'flex' }}>
               <div className="project-card  d-flex flex-column w-100">
                 <div className="project-image-box">
-                  <img src={project.image} alt={project.title} className="project-image" />
+                  <img src={project.image} alt={t(`projects.p${project.id}_title`)} className="project-image" />
                   <div className="project-overlay">
-                    <Link to={`/project/${project.id}`} className="btn-view-project">التفاصيل الكاملة</Link>
+                    <Link to={`/project/${project.id}`} className="btn-view-project">{t('projects.view_details')}</Link>
                   </div>
                   {/* tags */}
                   <div className="project-space-badge">
-                    {project.space}
+                    {i18n.language === 'en' && project.space_en ? project.space_en : project.space}
                   </div>
                 </div>
                 <div className="project-info p-4 flex-grow-1 d-flex flex-column">
-                  <h3 className="project-title mb-1" style={{ color: '#1a1a2e', fontWeight: '800', transition: 'none', fontSize: '20px' }}>{project.title}</h3>
+                  <h3 className="project-title mb-1" style={{ color: '#1a1a2e', fontWeight: '800', transition: 'none', fontSize: '20px' }}>{t(`projects.p${project.id}_title`)}</h3>
                   <p className="project-location mb-3" style={{ color: '#c09e6b', fontWeight: '600', fontSize: '13px' }}>
-                    <svg className="location-icon ms-1" viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+                    <svg className="location-icon me-1" viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
                       <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
                     </svg>
-                    {project.location}
+                    {t(`projects.p${project.id}_location`)}
                   </p>
                   <p className="project-desc mb-4 flex-grow-1" style={{ color: '#555', lineHeight: '1.6', fontSize: '14px' }}>
-                    {project.description}
+                    {t(`projects.p${project.id}_desc`).substring(0, 100)}...
                   </p>
                 </div>
               </div>

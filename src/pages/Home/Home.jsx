@@ -5,9 +5,18 @@ import ProjectsSection from '../../components/ProjectsSection/ProjectsSection';
 import ServicesSection from '../../components/ServicesSection/ServicesSection';
 import WhyChooseUs from '../../components/WhyChooseUs/WhyChooseUs';
 
+import SEO from '../../components/SEO/SEO';
+import { useTranslation } from 'react-i18next';
+
 const Home = () => {
+  const { t } = useTranslation();
+  
   return (
     <div>
+      <SEO 
+        title={t('seo.home_title')}
+        description={t('seo.home_desc')}
+      />
       <Hero />
       <AboutSection />
       <ProjectsSection />

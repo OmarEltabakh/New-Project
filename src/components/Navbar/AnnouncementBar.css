@@ -23,7 +23,13 @@
     display: flex;
     white-space: nowrap;
     width: max-content;
-    animation: ticker-scroll 25s linear infinite;
+    /* Default LTR animation */
+    animation: ticker-scroll-ltr 25s linear infinite;
+}
+
+/* Pause animation on hover */
+.announcement-ticker:hover .ticker-content {
+    animation-play-state: paused;
 }
 
 .ticker-item {
@@ -38,7 +44,7 @@
 .ticker-icon {
     width: 18px;
     height: 18px;
-    margin-left: 10px;
+    margin-inline-end: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -50,11 +56,8 @@
     opacity: 0.9;
 }
 
-/* 
-   20 sets of content in JSX for a perfect seamless loop.
-   Moving by -5% brings the next set exactly to the start.
-*/
-@keyframes ticker-scroll {
+/* LTR Animation: Moves left */
+@keyframes ticker-scroll-ltr {
     from {
         transform: translateX(0);
     }
@@ -63,20 +66,19 @@
     }
 }
 
-.announcement-ticker:hover .ticker-content {
-    animation-play-state: paused;
+/* RTL Specific Styles */
+[dir="rtl"] .ticker-content {
+    /* Change to RTL animation */
+    animation: ticker-scroll-rtl 25s linear infinite;
 }
 
-@media (max-width: 768px) {
-    .announcement-bar-wrapper {
-        height: 35px;
+/* RTL Animation: Moves right to prevent empty gaps */
+@keyframes ticker-scroll-rtl {
+    from {
+        transform: translateX(0);
     }
-    .ticker-item {
-        padding: 0 20px;
-        font-size: 0.8rem;
-    }
-    .ticker-icon {
-        width: 14px;
-        height: 14px;
+    to {
+        transform: translateX(5%);
     }
 }
+

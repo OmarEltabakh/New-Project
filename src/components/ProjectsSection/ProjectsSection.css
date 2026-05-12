@@ -1,11 +1,13 @@
 .projects-section-wrapper {
   padding: 5rem 0;
-  background-color: #f6f8fb; /* Light grayish-blue for contrast */
+  background-color: #f6f8fb;
+  /* Light grayish-blue for contrast */
 }
 
 .section-title {
   font-weight: 800;
-  color: #1a1a2e; /* Royal Blue */
+  color: #1a1a2e;
+  /* Royal Blue */
   margin-bottom: 0.5rem;
   font-size: 2.2rem;
 }
@@ -13,14 +15,16 @@
 .title-underline {
   width: 60px;
   height: 4px;
-  background-color: #c09e6b; /* Gold */
+  background-color: #c09e6b;
+  /* Gold */
   border-radius: 2px;
 }
 
 /* We don't need projects-grid anymore as we use swiper */
 
 .projects-swiper {
-  padding-bottom: 50px !important; /* Space for pagination */
+  padding-bottom: 50px !important;
+  /* Space for pagination */
 }
 
 /* Custom Swiper navigation arrows implementation for reliable RTL support */
@@ -35,7 +39,7 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   display: flex !important;
   align-items: center;
@@ -55,12 +59,14 @@
   height: 24px;
 }
 
-.swiper-button-prev-custom { /* visual right */
-  right: -5px;
+.swiper-button-prev-custom {
+  /* visual right in RTL, left in LTR */
+  inset-inline-end: -5px;
 }
 
-.swiper-button-next-custom { /* visual left */
-  left: -5px;
+.swiper-button-next-custom {
+  /* visual left in RTL, right in LTR */
+  inset-inline-start: -5px;
 }
 
 .swiper-button-next-custom.swiper-button-disabled,
@@ -90,7 +96,7 @@
   background-color: #fff;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   height: 100%;
 }
@@ -99,7 +105,8 @@
 
 .project-image-box {
   position: relative;
-  height: 250px; /* Fixed height for image */
+  height: 250px;
+  /* Fixed height for image */
   overflow: hidden;
 }
 
@@ -116,7 +123,10 @@
 
 .project-overlay {
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-color: rgba(26, 26, 46, 0.7);
   display: flex;
   align-items: center;
@@ -153,14 +163,14 @@
 .project-space-badge {
   position: absolute;
   bottom: 15px;
-  right: 15px;
+  inset-inline-end: 15px;
   background-color: rgba(255, 255, 255, 0.95);
   color: #1a1a2e;
   padding: 4px 12px;
   border-radius: 20px;
   font-size: 12px;
   font-weight: 700;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .project-progress .progress {
@@ -172,12 +182,13 @@
   border-radius: 5px;
 }
 
-@media(max-width:576px){
-  .projects-section-wrapper{
+@media(max-width:576px) {
+  .projects-section-wrapper {
     padding: 0rem 0 !important;
     /* background-color: gold; */
   }
-  .projects-swiper-wrapper{
+
+  .projects-swiper-wrapper {
     padding: 0 !important;
   }
 }
