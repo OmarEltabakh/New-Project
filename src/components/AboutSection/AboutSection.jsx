@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import './AboutSection.css';
 import medina1 from "../../assets/about/medina-1.webp"
-import medina2 from "../../assets/about/medina-2.webp"
+import medina2 from "../../assets/about/almadena-1.jpg"
 
 const AboutSection = () => {
   const { t } = useTranslation();
@@ -38,6 +38,7 @@ const AboutSection = () => {
       )
     }
   ];
+
 
   return (
     <section id="about" className="about-section-wrapper">
