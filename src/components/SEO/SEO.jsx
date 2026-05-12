@@ -43,13 +43,13 @@ const SEO = ({ title, description, canonical, ogType = 'website', ogImage, keywo
       <meta property="og:description" content={seoDesc} />
       <meta property="og:url" content={url} />
       <meta property="og:site_name" content={siteName} />
-      {ogImage && <meta property="og:image" content={ogImage} />}
+      <meta property="og:image" content={ogImage || 'https://wasaelalnomou.com/logo.webp'} />
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={seoTitle} />
       <meta name="twitter:description" content={seoDesc} />
-      {ogImage && <meta name="twitter:image" content={ogImage} />}
+      <meta name="twitter:image" content={ogImage || 'https://wasaelalnomou.com/logo.webp'} />
       
       {/* Direction & Language */}
       <html lang={currentLang} />
