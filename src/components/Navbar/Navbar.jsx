@@ -49,9 +49,9 @@ const Navbar = () => {
             
             <ul className="navbar-links ">
               <div className="mobile-menu-header d-lg-none">
-                {/* <span className="lang-switch-mobile" onClick={toggleLanguage}>
+                <span className="lang-switch-mobile" onClick={toggleLanguage}>
                   {i18n.language === 'ar' ? 'English' : 'عربي'}
-                </span> */}
+                </span>
                 <div className="close-icon" onClick={closeMenu}>✕</div>
               </div>
 
@@ -65,9 +65,9 @@ const Navbar = () => {
 
           {/* Action */}
           <div className="navbar-actions">
-            {/* <span className="lang-switch d-none d-lg-block" onClick={toggleLanguage}>
+            <span className="lang-switch d-none d-lg-block" onClick={toggleLanguage}>
               {i18n.language === 'ar' ? 'English' : 'عربي'}
-            </span> */}
+            </span>
 
             <div className="mobile-toggle d-lg-none" onClick={toggleMenu}>
               <div className={`hamburger ${isMobileMenuOpen ? 'active' : ''}`}>
