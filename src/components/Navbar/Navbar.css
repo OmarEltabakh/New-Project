@@ -54,19 +54,29 @@
 
 .navbar-links li a:hover { color: #c09e6b; }
 
-/* Language switcher - white color */
+/* Language switcher - button style */
 .lang-switch, 
 .lang-switch-mobile {
   color: #ffffff !important;
   cursor: pointer;
   font-size: 14px;
-  font-weight: 500;
-  transition: 0.3s;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background-color: rgba(192, 158, 107, 0.2);
+  border: 1px solid rgba(192, 158, 107, 0.3);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .lang-switch:hover,
 .lang-switch-mobile:hover {
-  color: #c09e6b !important;
+  background-color: #c09e6b;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(192, 158, 107, 0.3);
 }
 
 /* Mobile Menu Logic */

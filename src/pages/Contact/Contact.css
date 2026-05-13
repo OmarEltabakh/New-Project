@@ -1,7 +1,6 @@
 .contact-page-wrapper {
   background-color: #f7f9fc;
   min-height: 100vh;
-  direction: rtl;
   padding-bottom: 80px;
 }
 
@@ -16,7 +15,7 @@
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: radial-gradient(circle at top right, rgba(192, 158, 107, 0.1) 0%, transparent 40%);
+  background: radial-gradient(circle at top end, rgba(192, 158, 107, 0.1) 0%, transparent 40%);
 }
 
 .contact-title-main {
@@ -60,7 +59,7 @@
   content: '';
   position: absolute;
   bottom: -60px;
-  left: -60px;
+  inset-inline-start: -60px;
   width: 150px;
   height: 150px;
   background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 60%);

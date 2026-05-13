@@ -1,7 +1,6 @@
 .premium-services-wrapper {
   padding: 120px 0;
   background-color: #fbfbfb;
-  direction: rtl;
 }
 
 .premium-services-grid {
@@ -70,7 +69,7 @@
 .service-number {
   position: absolute;
   top: 30px;
-  right: 30px;
+  inset-inline-end: 30px;
   font-size: 40px;
   font-weight: 900;
   color: transparent;
@@ -102,7 +101,7 @@
   content: '';
   position: absolute;
   bottom: 0;
-  right: 0;
+  inset-inline-start: 0;
   width: 50px;
   height: 3px;
   background-color: #c09e6b;

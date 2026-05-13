@@ -4,7 +4,6 @@
   padding-top: 60px;
   margin-top: auto;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
-  direction: rtl;
   font-family: 'Tajawal', system-ui, sans-serif;
 }
 
@@ -43,7 +42,7 @@
 .footer-heading::after {
   content: '';
   position: absolute;
-  right: 0;
+  inset-inline-start: 0;
   bottom: 0;
   width: 40px;
   height: 3px;
@@ -73,18 +72,22 @@
 
 .footer-links a::before {
   content: '←';
-  margin-left: 8px;
+  margin-inline-end: 8px;
   color: #c09e6b;
   transition: transform 0.3s ease;
 }
 
+[dir='ltr'] .footer-links a::before {
+  content: '→';
+}
+
 .footer-links a:hover {
   color: #c09e6b;
-  padding-right: 5px;
+  padding-inline-start: 5px;
 }
 
 .footer-links a:hover::before {
-  transform: translateX(-5px);
+  transform: translateX(calc(var(--dir-factor, 1) * -5px));
 }
 
 .footer-contact-info {
@@ -105,7 +108,7 @@
   width: 20px;
   height: 20px;
   fill: #c09e6b;
-  margin-left: 12px;
+  margin-inline-end: 12px;
   flex-shrink: 0;
 }
 

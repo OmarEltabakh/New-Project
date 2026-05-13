@@ -84,7 +84,7 @@ export const projects = [
       'Large windows',
       'Laundry area',
       'Space utilization',
-      'Planters',
+      'Agricultural Basins',
       'Strategic location',
       'Modern corridors',
       'Distinctive master suite for each apartment',
@@ -111,7 +111,7 @@ export const projects = [
   },
   {
     id: 2,
-    title: 'مشروع وقف الفيحاء',
+    title: 'AL-Fayhaa Project',
     location: 'المدينة المنورة',
     detailedDescription: `تولت شركة وسائل النمو إدارة المشروع ضمن منظومة متكاملة تغطي جميع مراحل التطوير والتشغيل العقاري.
 بدأت الرحلة بالإشراف الفني على المشروع لضمان جودة التنفيذ، بالتوازي مع تنظيم الجوانب المالية وإدارة التكاليف بكفاءة، ثم تهيئة المشروع للتشغيل من خلال تجهيز البنية التشغيلية والخدمات الأساسية.
@@ -134,18 +134,18 @@ export const projects = [
       '4 أدوار',
       'سلالم طوارئ',
       'خزانات مياه رئيسية',
-      'أنظمة سلامة متكاملة بالكامل متوافق مع متطلبات الدفاع المدني'
+      'انظمة سلامة متكاملة'
     ],
     features_en: [
       '4 Floors',
       'Emergency stairs',
       'Main water tanks',
-      'Fully integrated safety systems compliant with civil defense requirements'
+      'Integrated safety systems'
     ]
   },
   {
     id: 3,
-    title: 'الهجرة رزدنس',
+    title: 'Al-Hijra',
     location: 'مخطط القصواء، المدينة المنورة',
     detailedDescription: `
     شقق سكنية فاخرة ترتقي بمعايير السكن العصري، في موقع استراتيجي نابض بالحياة في قلب المدينة المنوّرة.

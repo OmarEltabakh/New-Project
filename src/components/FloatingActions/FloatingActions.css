@@ -1,7 +1,7 @@
 .global-floating-actions {
   position: fixed;
   bottom: 30px;
-  right: 30px;
+  inset-inline-start: 30px;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -44,7 +44,7 @@
 .floating-btn::before {
   content: attr(data-tooltip);
   position: absolute;
-  right: 70px;
+  inset-inline-start: 70px;
   background: rgba(26, 26, 46, 0.9);
   color: #fff;
   padding: 6px 12px;
@@ -62,13 +62,13 @@
 .floating-btn:hover::before {
   opacity: 1;
   visibility: visible;
-  right: 60px;
+  inset-inline-start: 60px;
 }
 
 @media (max-width: 768px) {
   .global-floating-actions {
     bottom: 20px;
-    right: 20px;
+    inset-inline-start: 20px;
   }
   .floating-btn {
     width: 45px;

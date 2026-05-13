@@ -112,6 +112,14 @@ code {
   background: var(--code-bg);
 }
 
+[dir="ltr"] {
+  --dir-factor: -1;
+}
+
+[dir="rtl"] {
+  --dir-factor: 1;
+}
+
 [dir="rtl"] .gallery-swiper-button-next svg,
 [dir="rtl"] .gallery-swiper-button-prev svg,
 [dir="rtl"] .pd-swiper-button-next-custom svg,
