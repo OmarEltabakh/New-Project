@@ -39,42 +39,42 @@ const Contact = () => {
     );
   };
 
-const handleSubmit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     if (!isFormValid()) return;
-    
+
     setLoading(true);
     setStatus(null);
 
-    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyCQTD9EmBtAdolD1Ntq4n2BTa77ktlSrYgb95hwARLmMQ4qc8itRQZCxziLaLUjRJh1w/exec';
+    const SCRIPT_URL = import.meta.env.VITE_SCRIPT_URL;
 
     try {
       const params = new URLSearchParams();
-      
+
       params.append('name', formData.name.trim());
       params.append('phone', formData.phone.trim());
       params.append('email', formData.email.trim());
-      params.append('subject', formData.subject); 
-      params.append('message', formData.message.trim()); 
+      params.append('subject', formData.subject);
+      params.append('message', formData.message.trim());
 
       await fetch(SCRIPT_URL, {
         method: 'POST',
-        body: params, 
-        mode: 'no-cors', 
+        body: params,
+        mode: 'no-cors',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded'
         }
       });
 
       setStatus('success');
-      
-      setFormData({ 
-        name: '', 
-        phone: '', 
-        email: '', 
-        subject: t('contact.subjects.inquiry'), 
-        message: '' 
+
+      setFormData({
+        name: '',
+        phone: '',
+        email: '',
+        subject: t('contact.subjects.inquiry'),
+        message: ''
       });
 
     } catch (error) {
@@ -87,21 +87,21 @@ const handleSubmit = async (e) => {
 
   return (
     <div className="contact-page-wrapper">
-      <SEO 
+      <SEO
         title={t('seo.contact_title')}
         description={t('seo.contact_desc')}
       />
       {/* Contact Hero Area */}
-      <div 
-        className="contact-hero" 
+      <div
+        className="contact-hero"
         style={{
           backgroundImage: `url(${contactBg})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }}
       >
-        <div style={{position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(15, 23, 42, 0.85)'}}></div>
-        <div className="container text-center text-white" style={{position: 'relative', zIndex: 1}}>
+        <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(15, 23, 42, 0.85)' }}></div>
+        <div className="container text-center text-white" style={{ position: 'relative', zIndex: 1 }}>
           <h1 className="contact-title-main">{t('contact.title')}</h1>
           <p className="contact-subtitle mt-3">{t('contact.subtitle')}</p>
         </div>
@@ -109,28 +109,28 @@ const handleSubmit = async (e) => {
 
       <div className="container contact-content-container">
         <div className="contact-grid ">
-          
+
           {/* Contact Details (Dark side) */}
           <div className="contact-info-panel">
             <h3 className="info-title">{t('contact.info_title')}</h3>
             <p className="info-desc">{t('contact.info_desc')}</p>
-            
+
             <div className="contact-info-list">
               <div className="info-item">
                 <span className="info-icon whatsapp-icon">
-                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" /></svg>
                 </span>
                 <div className="info-details centered-details">
                   <div className="whatsapp-numbers-column">
-                    <a href="https://wa.me/966542231128" target="_blank" rel="noreferrer" className="whatsapp-number-link">+966 54 223 1128</a>
-                    <a href="https://wa.me/966546680480" target="_blank" rel="noreferrer" className="whatsapp-number-link">+966 54 668 0480</a>
+                    <a href="https://wa.me/966542231128" target="_blank" rel="noreferrer" dir="ltr" className="whatsapp-number-link">+966 54 223 1128</a>
+                    <a href="https://wa.me/966546680480" target="_blank" rel="noreferrer" dir="ltr" className="whatsapp-number-link">+966 54 668 0480</a>
                   </div>
                 </div>
               </div>
 
               <div className="info-item">
                 <span className="info-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" /><circle cx="12" cy="10" r="3" /></svg>
                 </span>
                 <div className="info-details">
                   <span className="info-label">{t('contact.hq')}</span>
@@ -146,15 +146,15 @@ const handleSubmit = async (e) => {
           <div className="contact-form-panel">
             <h3 className="form-header">{t('contact.send_message')}</h3>
             <p className="text-muted mb-4">{t('contact.form_desc')}</p>
-            
+
             {status === 'success' && (
-              <div className="alert alert-success mb-4" role="alert" style={{backgroundColor: '#e6f4ea', color: '#137333', padding: '15px', borderRadius: '8px', border: '1px solid #ceead6'}}>
+              <div className="alert alert-success mb-4" role="alert" style={{ backgroundColor: '#e6f4ea', color: '#137333', padding: '15px', borderRadius: '8px', border: '1px solid #ceead6' }}>
                 {t('contact.success')}
               </div>
             )}
 
             {status === 'error' && (
-              <div className="alert alert-danger mb-4" role="alert" style={{backgroundColor: '#fce8e6', color: '#c5221f', padding: '15px', borderRadius: '8px', border: '1px solid #fad2cf'}}>
+              <div className="alert alert-danger mb-4" role="alert" style={{ backgroundColor: '#fce8e6', color: '#c5221f', padding: '15px', borderRadius: '8px', border: '1px solid #fad2cf' }}>
                 {t('contact.error')}
               </div>
             )}
@@ -164,9 +164,9 @@ const handleSubmit = async (e) => {
                 <label className="custom-label">{t('contact.full_name')} <span className="text-danger">*</span></label>
                 <input required name="name" value={formData.name} onChange={handleChange} type="text" className="custom-input" placeholder={t('contact.placeholder_name')} />
               </div>
-              
+
               <div className="form-group mb-4">
-                <label className="custom-label">{t('contact.phone')} <span className="text-danger">*</span> {formData.phone && !isPhoneValid(formData.phone) && <span style={{color: 'red', fontSize: '12px', fontWeight: 'normal'}}>{t('contact.phone_invalid')}</span>}</label>
+                <label className="custom-label">{t('contact.phone')} <span className="text-danger">*</span> {formData.phone && !isPhoneValid(formData.phone) && <span style={{ color: 'red', fontSize: '12px', fontWeight: 'normal' }}>{t('contact.phone_invalid')}</span>}</label>
                 <input required name="phone" value={formData.phone} onChange={handleChange} type="tel" className="custom-input" placeholder="05xxxxxxxx" dir="ltr" style={{ textAlign: 'right', borderColor: formData.phone && !isPhoneValid(formData.phone) ? 'red' : '' }} />
               </div>
 
@@ -181,20 +181,20 @@ const handleSubmit = async (e) => {
                   <option>{t('contact.subjects.other')}</option>
                 </select>
               </div>
-              
+
               <div className="form-group mb-4">
                 <label className="custom-label">{t('contact.message')} <span className="text-danger">*</span></label>
                 <textarea required name="message" value={formData.message} onChange={handleChange} className="custom-textarea" rows="4" placeholder={t('contact.placeholder_message')}></textarea>
               </div>
 
-              <button 
-                type="submit" 
+              <button
+                type="submit"
                 className="custom-submit-btn w-100"
                 disabled={!isFormValid() || loading}
-                style={{ opacity: (!isFormValid() || loading) ? 0.6 : 1, cursor: (!isFormValid() || loading) ? 'not-allowed' : 'pointer'}}
+                style={{ opacity: (!isFormValid() || loading) ? 0.6 : 1, cursor: (!isFormValid() || loading) ? 'not-allowed' : 'pointer' }}
               >
                 {loading ? t('contact.sending') : t('contact.submit')}
-                {!loading && <svg className="ms-2" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>}
+                {!loading && <svg className="ms-2" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" /></svg>}
               </button>
             </form>
           </div>
@@ -202,7 +202,7 @@ const handleSubmit = async (e) => {
         </div>
       </div>
     </div>
-);
+  );
 };
 
 export default Contact;

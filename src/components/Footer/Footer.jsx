@@ -39,8 +39,12 @@ const Footer = () => {
               <a href="https://maps.app.goo.gl/7ASUxzsv5JvMammM7?g_st=iw" target="_blank" rel="noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>{t('footer.location')}</a>
             </li>
             <li>
-              <svg className="footer-icon" viewBox="0 0 24 24"><path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.89l5.624-6.812zm9.201-1.451l4.623-3.747v9.467l-4.623-5.72z" /></svg>
-              <a href="mailto:info@wasaelalnomou.com" className="footer-link-email">info@wasaelalnomou.com</a>
+              <svg className="footer-icon" viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 2l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z" /></svg>
+              <a href="mailto:ahmed@wasaelsa.com" className="footer-link-email">ahmed@wasaelsa.com</a>
+            </li>
+            <li>
+              <svg className="footer-icon" viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 2l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z" /></svg>
+              <a href="mailto:mohamed@wasaelsa.com" className="footer-link-email">mohamed@wasaelsa.com</a>
             </li>
             <li className="footer-whatsapp-li">
               <div className="footer-icon-wrapper">
